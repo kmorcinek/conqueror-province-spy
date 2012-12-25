@@ -1,0 +1,9 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:ProvinceSpy.WpfGui.Controls" x:Class="ProvinceSpy.WpfGui.ProvinceWindow"
+        Title="ProvinceWindow" Height="328.8" Width="340.8">
+    <Grid>
+        <Controls:ProvinceUserControl HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="provinceUserControl" />
+    </Grid>
+</Window>

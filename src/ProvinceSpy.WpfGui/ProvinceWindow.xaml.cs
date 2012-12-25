@@ -9,7 +9,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ProvinceSpy.WpfGui.Controls;
 using ProvinceSpy.WpfGui.ViewModels;
@@ -17,19 +16,18 @@ using ProvinceSpy.WpfGui.ViewModels;
 namespace ProvinceSpy.WpfGui
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ProvinceWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ProvinceWindow : Window
     {
-        public MainWindow()
+        public ProvinceWindow()
         {
             InitializeComponent();
-            DataContext = new CapitalViewModel();
-        }
+            
+//            var province = new ProvinceUserControl();
+            var provinceViewModel = new ProvinceViewModel { ProvinceName = "Burg", FarmsViewModel = new FarmsViewModel() };
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            new ProvinceWindow().Show();
+            provinceUserControl.DataContext = provinceViewModel;
         }
     }
 }

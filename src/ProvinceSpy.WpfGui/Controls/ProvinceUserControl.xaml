@@ -8,5 +8,6 @@
     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,10,10">
         <Label Content="ProvinceName"/>
         <local:FarmsUserControl/>
+        <Button Content="Done" Margin="15"/>
     </StackPanel>
 </UserControl>

@@ -60,8 +60,12 @@
       <DependentUpon>ProvinceUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ProvinceWindow.xaml.cs">
+      <DependentUpon>ProvinceWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\CapitalViewModel.cs" />
     <Compile Include="ViewModels\FarmsViewModel.cs" />
+    <Compile Include="ViewModels\ProvinceViewModel.cs" />
     <Page Include="Controls\FarmsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -82,6 +86,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ProvinceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
