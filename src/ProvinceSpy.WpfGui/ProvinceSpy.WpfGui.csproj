@@ -53,8 +53,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\FarmsUserControl.xaml.cs">
+      <DependentUpon>FarmsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProvinceUserControl.xaml.cs">
+      <DependentUpon>ProvinceUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModels\CapitalViewModel.cs" />
+    <Compile Include="ViewModels\FarmsViewModel.cs" />
+    <Page Include="Controls\FarmsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ProvinceUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

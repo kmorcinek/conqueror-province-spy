@@ -11,23 +11,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ProvinceSpy.WpfGui.ViewModels;
 
-namespace ProvinceSpy.WpfGui
+namespace ProvinceSpy.WpfGui.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ProvinceUserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ProvinceUserControl : UserControl
     {
-        public MainWindow()
+        public ProvinceUserControl()
         {
             InitializeComponent();
-            DataContext = new CapitalViewModel();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
         }
     }
 }
