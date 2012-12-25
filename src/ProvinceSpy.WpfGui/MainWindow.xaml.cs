@@ -29,7 +29,24 @@ namespace ProvinceSpy.WpfGui
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            new ProvinceWindow().Show();
+//            new ProvinceWindow().Show();
+
+            var names = new[]
+                {
+                    "Poland",
+                    "Holland",
+                };
+
+            foreach (var name in names)
+            {
+                var provinceViewModel = new ProvinceViewModel {ProvinceName = name};
+
+                var province = new ProvinceUserControl {DataContext = provinceViewModel};
+            }
+
+            // TOOD ICollectionView for province list
+
+
         }
     }
 }

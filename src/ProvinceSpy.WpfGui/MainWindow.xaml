@@ -7,6 +7,7 @@
         <Button Content="Button" HorizontalAlignment="Left" Margin="223,38,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <ComboBox HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="193" x:Name="cmbCapital"
     		ItemsSource="{Binding Countries}"/>
-
+        <WrapPanel HorizontalAlignment="Stretch" Margin="10,76,0,0" VerticalAlignment="Stretch" Orientation="Horizontal" x:Name="flowPanel"/>
+        <Button Content="Next turn" HorizontalAlignment="Left" Margin="359,38,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

@@ -8,6 +8,11 @@ namespace ProvinceSpy.WpfGui.ViewModels
         public string ProvinceName { get; set; }
         public FarmsViewModel FarmsViewModel { get; set; }
 
+        public ProvinceViewModel()
+        {
+            FarmsViewModel = new FarmsViewModel();
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
