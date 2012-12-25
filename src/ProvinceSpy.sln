@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvinceSpy", "ProvinceSpy\ProvinceSpy.csproj", "{D75BA7F3-1E4D-475E-B25F-567A7FB56DDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvinceSpy.Tests", "ProvinceSpy.Tests\ProvinceSpy.Tests.csproj", "{1E1C45A2-8B4A-47E2-A674-EC086CAC8E0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvinceSpy.WindowsGui", "ProvinceSpy.WindowsGui\ProvinceSpy.WindowsGui.csproj", "{98C1C16D-8180-41BD-9F10-A94BA961234E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D75BA7F3-1E4D-475E-B25F-567A7FB56DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D75BA7F3-1E4D-475E-B25F-567A7FB56DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D75BA7F3-1E4D-475E-B25F-567A7FB56DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D75BA7F3-1E4D-475E-B25F-567A7FB56DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E1C45A2-8B4A-47E2-A674-EC086CAC8E0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E1C45A2-8B4A-47E2-A674-EC086CAC8E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E1C45A2-8B4A-47E2-A674-EC086CAC8E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E1C45A2-8B4A-47E2-A674-EC086CAC8E0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98C1C16D-8180-41BD-9F10-A94BA961234E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98C1C16D-8180-41BD-9F10-A94BA961234E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98C1C16D-8180-41BD-9F10-A94BA961234E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98C1C16D-8180-41BD-9F10-A94BA961234E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
