@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvinceSpy", "ProvinceSpy\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvinceSpy.Tests", "ProvinceSpy.Tests\ProvinceSpy.Tests.csproj", "{1E1C45A2-8B4A-47E2-A674-EC086CAC8E0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvinceSpy.WindowsGui", "ProvinceSpy.WindowsGui\ProvinceSpy.WindowsGui.csproj", "{98C1C16D-8180-41BD-9F10-A94BA961234E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvinceSpy.WpfGui", "ProvinceSpy.WpfGui\ProvinceSpy.WpfGui.csproj", "{5FF32B26-28FB-48B0-A5C0-2EB22AAFB041}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,10 @@ Global
 		{1E1C45A2-8B4A-47E2-A674-EC086CAC8E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E1C45A2-8B4A-47E2-A674-EC086CAC8E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E1C45A2-8B4A-47E2-A674-EC086CAC8E0D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98C1C16D-8180-41BD-9F10-A94BA961234E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98C1C16D-8180-41BD-9F10-A94BA961234E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98C1C16D-8180-41BD-9F10-A94BA961234E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98C1C16D-8180-41BD-9F10-A94BA961234E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FF32B26-28FB-48B0-A5C0-2EB22AAFB041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FF32B26-28FB-48B0-A5C0-2EB22AAFB041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FF32B26-28FB-48B0-A5C0-2EB22AAFB041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FF32B26-28FB-48B0-A5C0-2EB22AAFB041}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

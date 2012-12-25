@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProvinceSpy.WindowsGui.Properties
+namespace ProvinceSpy.WpfGui.Properties
 {
 
 

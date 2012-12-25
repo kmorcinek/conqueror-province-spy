@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProvinceSpy.WindowsGui.Properties
+namespace ProvinceSpy.WpfGui.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace ProvinceSpy.WindowsGui.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ProvinceSpy.WindowsGui.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ProvinceSpy.WpfGui.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
