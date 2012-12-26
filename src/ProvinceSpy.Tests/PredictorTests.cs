@@ -6,15 +6,26 @@ namespace ProvinceSpy.Tests
     [TestFixture]
     public class PredictorTests
     {
-         [Test]
-        public void GetLastBuilded_RevisionDiffersByFarms_FarmsWasBuilded()
-         {
-             var predictor = new Predictor();
-             var provinceHistory = new ProvinceHistory("");
-             provinceHistory.Add(new ProvinceRevision(1));
-             provinceHistory.Add(new ProvinceRevision(2));
+        [Test]
+        public void GetLastBuilt_RevisionDiffersByFarms_FarmWasBuilt()
+        {
+            var predictor = new Predictor();
+            var provinceHistory = new ProvinceHistory("");
+            provinceHistory.Add(new ProvinceRevision(1));
+            provinceHistory.Add(new ProvinceRevision(2));
 
-             predictor.GetLastBuilded(provinceHistory).Value.Should().Be(Buildings.Farm);
-         }
+            predictor.GetLastBuilt(provinceHistory).Value.Should().Be(Buildings.Farm);
+        }
+
+        [Test]
+        public void Predict_NoChangesInRevisions_NothingWasBuilt()
+        {
+            var predictor = new Predictor();
+            var provinceHistory = new ProvinceHistory("");
+            provinceHistory.Add(new ProvinceRevision(2));
+            provinceHistory.Add(new ProvinceRevision(2));
+
+            predictor.GetLastBuilt(provinceHistory).HasValue.Should().BeFalse();
+        }
     }
 }

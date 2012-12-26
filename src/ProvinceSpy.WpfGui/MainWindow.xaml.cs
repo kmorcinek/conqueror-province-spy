@@ -47,7 +47,7 @@ namespace ProvinceSpy.WpfGui
             }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void NextTurnClick(object sender, RoutedEventArgs e)
         {
             foreach (var provinceViewModel in this.viewModel.DatabaseObjects.Select(p => p.ProvinceViewModel))
             {

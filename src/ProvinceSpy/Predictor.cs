@@ -9,16 +9,19 @@ namespace ProvinceSpy
         [Pure]
         public IEnumerable<BuildPrediction> Predict(ProvinceHistory provinceHistory)
         {
-            Buildings? lastBuilding = GetLastBuilded(provinceHistory);
-            return new BuildPrediction[0];
+            var lastBuilding = GetLastBuilt(provinceHistory);
+
+            if(lastBuilding.HasValue == false) 
+                return new BuildPrediction[0];
+            
             return new []
                 {
-                    new BuildPrediction{TurnsLeft = 4, Building = Buildings.Farm}, 
+                    new BuildPrediction{TurnsLeft = 4, Building = lastBuilding.Value}, 
                 };
         }
 
         [Pure]
-        internal Buildings? GetLastBuilded(ProvinceHistory provinceHistory)
+        internal Buildings? GetLastBuilt(ProvinceHistory provinceHistory)
         {
             var lastIndex = provinceHistory.Revisions.Count - 1;
             var last = provinceHistory.Revisions[lastIndex];
