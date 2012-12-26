@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProvinceSpy.WpfGui.ViewModels;
 
 namespace ProvinceSpy.WpfGui
 {
@@ -24,8 +25,8 @@ namespace ProvinceSpy.WpfGui
         {
             InitializeComponent();
             var vm = new WindowViewModel();
-            vm.DatabaseObjects.Add(new MyDatabaseObject(){DbName = "11"});
-            vm.DatabaseObjects.Add(new MyDatabaseObject(){DbName = "15"});
+            vm.DatabaseObjects.Add(new MyDatabaseObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Burg" }, DbName = "a" });
+            vm.DatabaseObjects.Add(new MyDatabaseObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Walachia" }, DbName = "b" });
             DataContext = vm;
         }
     }
@@ -43,19 +44,22 @@ namespace ProvinceSpy.WpfGui
 
     public class MyDatabaseObject : INotifyPropertyChanged
     {
+        public ProvinceViewModel ProvinceViewModel { get; set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private string _dbName;
 
-        public string DbName
-        {
-            get { return _dbName; }
-            set
-            {
-                _dbName = value;
-                if (PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs("DbName"));
-            }
-        }
+        public string DbName { get; set; }
+//        public string DbName
+//        {
+//            get { return _dbName; }
+//            set
+//            {
+//                _dbName = value;
+//                if (PropertyChanged != null)
+//                    PropertyChanged(this, new PropertyChangedEventArgs("DbName"));
+//            }
+//        }
     }
 }

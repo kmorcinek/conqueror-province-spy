@@ -12,7 +12,8 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <controls:MyUserControl Title="{Binding DbName}" DataContext=""/>
+                    <controls:MyUserControl Title="{Binding DbName}"
+                                            DataContext="{Binding ProvinceViewModel}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
