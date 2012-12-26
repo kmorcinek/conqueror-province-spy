@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using ProvinceSpy.WpfGui.Controls;
 using ProvinceSpy.WpfGui.ViewModels;
 
@@ -24,12 +12,14 @@ namespace ProvinceSpy.WpfGui
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new CapitalViewModel();
+            var vm = new CapitalViewModel();
+            vm.DatabaseObjects.Add(new MyTempraryObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Burg" } });
+            vm.DatabaseObjects.Add(new MyTempraryObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Walachia" } });
+            DataContext = vm;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            new PanelWindow().Show();
             return;
 //            new ProvinceWindow().Show();
 
