@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics.Contracts;
 
 namespace ProvinceSpy
@@ -10,9 +11,8 @@ namespace ProvinceSpy
         public IEnumerable<BuildPrediction> Predict(ProvinceHistory provinceHistory)
         {
             Contract.Requires<ArgumentNullException>(provinceHistory != null);
-            //            Contract.Requires<ArgumentException>(provinceHistory.Revisions != null);
 
-            var lastBuilding = GetLastBuilt(provinceHistory);
+            var lastBuilding = GetLastBuilt(provinceHistory.Revisions);
 
             return new[]
                 {
@@ -23,17 +23,19 @@ namespace ProvinceSpy
         }
 
         [Pure]
-        internal Buildings? GetLastBuilt(ProvinceHistory provinceHistory)
+        internal Buildings? GetLastBuilt(ReadOnlyCollection<ProvinceRevision> revisions)
         {
-            if (provinceHistory.Revisions.Count == 0) return null;
+            Contract.Requires<ArgumentException>(revisions != null);
 
-            var lastIndex = provinceHistory.Revisions.Count - 1;
-            var last = provinceHistory.Revisions[lastIndex];
+            if (revisions.Count == 0) return null;
+
+            var lastIndex = revisions.Count - 1;
+            var last = revisions[lastIndex];
             var currentFarmsCount = last.FarmsCount;
 
             for (int i = lastIndex - 1; i >= 0; i--)
             {
-                var currentRevision = provinceHistory.Revisions[i];
+                var currentRevision = revisions[i];
                 if (currentRevision.FarmsCount < currentFarmsCount)
                 {
                     return Buildings.Farm;

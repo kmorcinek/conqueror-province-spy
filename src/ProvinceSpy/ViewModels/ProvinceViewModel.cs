@@ -7,11 +7,6 @@
         private FarmsViewModel farmsViewModel;
         public BuildPrediction BuildPrediction { get; set; }
 
-        public ProvinceViewModel()
-        {
-            FarmsViewModel = new FarmsViewModel();
-        }
-
         public FarmsViewModel FarmsViewModel 
         { 
             get { return farmsViewModel; }

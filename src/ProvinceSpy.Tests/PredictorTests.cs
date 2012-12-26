@@ -14,7 +14,7 @@ namespace ProvinceSpy.Tests
             provinceHistory.Add(new ProvinceRevision(1));
             provinceHistory.Add(new ProvinceRevision(2));
 
-            predictor.GetLastBuilt(provinceHistory).Value.Should().Be(Buildings.Farm);
+            predictor.GetLastBuilt(provinceHistory.Revisions).Value.Should().Be(Buildings.Farm);
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace ProvinceSpy.Tests
             provinceHistory.Add(new ProvinceRevision(2));
             provinceHistory.Add(new ProvinceRevision(2));
 
-            predictor.GetLastBuilt(provinceHistory).HasValue.Should().BeFalse();
+            predictor.GetLastBuilt(provinceHistory.Revisions).HasValue.Should().BeFalse();
         }
     }
 }

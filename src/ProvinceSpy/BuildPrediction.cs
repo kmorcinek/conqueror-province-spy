@@ -17,7 +17,11 @@ namespace ProvinceSpy
         public Buildings Building
         {
             get { return this.building; }
-            set { SetField(ref this.building, value, () => Building); }
+            set
+            {
+                SetField(ref this.building, value, () => Building);
+                OnPropertyChanged(()=> Color);
+            }
         }
         public int TurnsLeft
         {

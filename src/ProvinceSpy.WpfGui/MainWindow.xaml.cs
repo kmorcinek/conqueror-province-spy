@@ -60,7 +60,9 @@ namespace ProvinceSpy.WpfGui
                 var predictor = new Predictor();
                 var buildPredictions = predictor.Predict(provinceHistory);
 
-                provinceViewModel.BuildPrediction = buildPredictions.FirstOrDefault();
+                var firstPrediction = buildPredictions.First();
+                provinceViewModel.BuildPrediction.Building = firstPrediction.Building;
+                provinceViewModel.BuildPrediction.TurnsLeft = firstPrediction.TurnsLeft;
             }
         }
 
