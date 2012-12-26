@@ -29,7 +29,11 @@ namespace ProvinceSpy.WpfGui
                 {
                     history.Add(new ProvinceHistory(neighbour));
                     // TODO should be from model not from this loop
-                    viewModel.DatabaseObjects.Add(new MyTemporaryObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = neighbour } });
+                    viewModel.DatabaseObjects.Add(new MyTemporaryObject { ProvinceViewModel = new ProvinceViewModel
+                        {
+                            ProvinceName = neighbour,
+                            FarmsViewModel = new FarmsViewModel{FarmsCount=3},
+                        } });
                 }
 
                 (sender as Button).Visibility = Visibility.Hidden;

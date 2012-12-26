@@ -5,10 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProvinceSpy.WpfGui.Controls" 
              x:Class="ProvinceSpy.WpfGui.Controls.ProvinceUserControl" 
-             mc:Ignorable="d" Height="200" Width="200">
+             mc:Ignorable="d" Height="200" Width="200"
+                DataContextChanged="ProvinceUserControl_OnDataContextChanged">
     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,10,10">
-        <Label Content="ProvinceName"/>
-        <local:FarmsUserControl/>
+        <Label HorizontalAlignment="Center" Content="{Binding Path=ProvinceName}"/>
+        <local:FarmsUserControl x:Name="farmsUserControl"/>
         <Button Content="Done" Margin="15"/>
     </StackPanel>
 </UserControl>
