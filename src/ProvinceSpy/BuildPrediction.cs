@@ -1,12 +1,29 @@
 ﻿using System;
 using System.Windows.Media;
+using ProvinceSpy.ViewModels;
 
 namespace ProvinceSpy
 {
-    public class BuildPrediction
+    public class BuildPrediction : ViewModelBase
     {
-        public Buildings Building { get; set; }
-        public int TurnsLeft { get; set; }
+        public static BuildPrediction Unknown
+        {
+            get { return new BuildPrediction { Building = Buildings.Unknown, TurnsLeft = 99 }; }
+        }
+
+        private int turnsLeft;
+        private Buildings building;
+
+        public Buildings Building
+        {
+            get { return this.building; }
+            set { SetField(ref this.building, value, () => Building); }
+        }
+        public int TurnsLeft
+        {
+            get { return this.turnsLeft; }
+            set { SetField(ref this.turnsLeft, value, () => TurnsLeft); }
+        }
         public Brush Color
         {
             get
@@ -25,6 +42,8 @@ namespace ProvinceSpy
                         return Brushes.Yellow;
                     case Buildings.Culture:
                         return Brushes.Azure;
+                    case Buildings.Unknown:
+                        return Brushes.White;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }

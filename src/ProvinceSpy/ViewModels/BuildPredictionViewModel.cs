@@ -3,6 +3,11 @@
     public class BuildPredictionViewModel : ViewModelBase
     {
         public Buildings Building { get; set; }
-        public int TurnsLeft { get; set; } 
+        private int turnsLeft;
+        public int TurnsLeft 
+        { 
+            get { return this.turnsLeft; }
+            set { SetField(ref this.turnsLeft, value, () => TurnsLeft); } 
+        } 
     }
 }

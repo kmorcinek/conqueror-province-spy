@@ -10,23 +10,23 @@ namespace ProvinceSpy
         public IEnumerable<BuildPrediction> Predict(ProvinceHistory provinceHistory)
         {
             Contract.Requires<ArgumentNullException>(provinceHistory != null);
-            Contract.Requires<ArgumentException>(provinceHistory.Revisions != null);
-            Contract.Requires<ArgumentException>(provinceHistory.Revisions.Count > 0);
-            
+            //            Contract.Requires<ArgumentException>(provinceHistory.Revisions != null);
+
             var lastBuilding = GetLastBuilt(provinceHistory);
 
-            if(lastBuilding.HasValue == false) 
-                return new BuildPrediction[0];
-            
-            return new []
+            return new[]
                 {
-                    new BuildPrediction{TurnsLeft = 4, Building = lastBuilding.Value}, 
+                    lastBuilding.HasValue
+                        ? new BuildPrediction {TurnsLeft = 4, Building = lastBuilding.Value}
+                        : BuildPrediction.Unknown, 
                 };
         }
 
         [Pure]
         internal Buildings? GetLastBuilt(ProvinceHistory provinceHistory)
         {
+            if (provinceHistory.Revisions.Count == 0) return null;
+
             var lastIndex = provinceHistory.Revisions.Count - 1;
             var last = provinceHistory.Revisions[lastIndex];
             var currentFarmsCount = last.FarmsCount;

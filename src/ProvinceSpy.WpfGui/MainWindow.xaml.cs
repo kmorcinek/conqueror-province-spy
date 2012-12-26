@@ -19,6 +19,14 @@ namespace ProvinceSpy.WpfGui
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            foreach (var provinceViewModel in this.viewModel.DatabaseObjects.Select(p => p.ProvinceViewModel))
+            {
+                provinceViewModel.BuildPrediction.Building = Buildings.Soldiers;
+            }
+        }
+
+        private void SetUp()
+        {
             var capital = cmbCapital.SelectedValue;
             if (capital != null)
             {
@@ -29,20 +37,14 @@ namespace ProvinceSpy.WpfGui
                     provinceHistories.Add(provinceHistory);
                     // TODO should be from model not from this loop
                     viewModel.DatabaseObjects.Add(new MyTemporaryObject
-                    {
-                        ProvinceViewModel = new ProvinceViewModel
-                            {
-                                ProvinceName = neighbour,
-                                FarmsViewModel = new FarmsViewModel { FarmsCount = 3 },
-                                BuildPrediction = null,
-                            }
-                    });
-                }
-                var button = sender as Button;
-
-                if (button != null)
-                {
-                    button.Visibility = Visibility.Hidden;
+                        {
+                            ProvinceViewModel = new ProvinceViewModel
+                                {
+                                    ProvinceName = neighbour,
+                                    FarmsViewModel = new FarmsViewModel {FarmsCount = 3},
+                                    BuildPrediction = predictor.Predict(provinceHistory).First(),
+                                }
+                        });
                 }
             }
         }
@@ -64,7 +66,7 @@ namespace ProvinceSpy.WpfGui
 
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
-            Button_Click_1(this, RoutedEventArgs.Empty as RoutedEventArgs);
+            SetUp();
         }
     }
 }

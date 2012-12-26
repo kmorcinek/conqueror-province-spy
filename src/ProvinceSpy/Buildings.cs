@@ -8,5 +8,6 @@
         Farm,
         Gold,
         Culture,
+        Unknown,
     }
 }
