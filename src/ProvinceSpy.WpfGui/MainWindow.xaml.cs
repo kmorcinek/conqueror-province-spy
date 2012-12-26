@@ -34,7 +34,7 @@ namespace ProvinceSpy.WpfGui
                             {
                                 ProvinceName = neighbour,
                                 FarmsViewModel = new FarmsViewModel { FarmsCount = 3 },
-                                BuildPrediction = predictor.Predict(provinceHistory).FirstOrDefault(),
+                                BuildPrediction = null,
                             }
                     });
                 }

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using System.Linq;
 
 namespace ProvinceSpy
 {
@@ -9,6 +9,10 @@ namespace ProvinceSpy
         [Pure]
         public IEnumerable<BuildPrediction> Predict(ProvinceHistory provinceHistory)
         {
+            Contract.Requires<ArgumentNullException>(provinceHistory != null);
+            Contract.Requires<ArgumentException>(provinceHistory.Revisions != null);
+            Contract.Requires<ArgumentException>(provinceHistory.Revisions.Count > 0);
+            
             var lastBuilding = GetLastBuilt(provinceHistory);
 
             if(lastBuilding.HasValue == false) 
