@@ -8,7 +8,7 @@
         <ComboBox HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="193" x:Name="cmbCapital"
     		ItemsSource="{Binding Countries}"/>
         <Button Content="Next turn" HorizontalAlignment="Left" Margin="359,38,0,0" VerticalAlignment="Top" Width="75"/>
-        <ListBox Margin="10,110,10,10" ItemsSource="{Binding DatabaseObjects}">
+        <ListBox Margin="10,110,10,10" ItemsSource="{Binding DatabaseObjects}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>

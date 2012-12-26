@@ -9,19 +9,21 @@ namespace ProvinceSpy.WpfGui
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly CapitalViewModel viewModel;
+
         public MainWindow()
         {
             InitializeComponent();
-            var vm = new CapitalViewModel();
-            vm.DatabaseObjects.Add(new MyTempraryObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Burg" } });
-            vm.DatabaseObjects.Add(new MyTempraryObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Walachia" } });
-            DataContext = vm;
+            viewModel = new CapitalViewModel();
+            viewModel.DatabaseObjects.Add(new MyTempraryObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Walachia" } });
+            DataContext = viewModel;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            viewModel.DatabaseObjects.Add(new MyTempraryObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Burg" } });
+
             return;
-//            new ProvinceWindow().Show();
 
             var names = new[]
                 {
@@ -36,7 +38,7 @@ namespace ProvinceSpy.WpfGui
                 var province = new ProvinceUserControl {DataContext = provinceViewModel};
             }
 
-            // TOOD ICollectionView for province list
+            // TODO ICollectionView for province list
 
 
         }

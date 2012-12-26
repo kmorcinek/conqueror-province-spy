@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ProvinceSpy.WpfGui.Controls" x:Class="ProvinceSpy.WpfGui.Controls.ProvinceUserControl" 
-             mc:Ignorable="d" Height="284.8" Width="326.4">
+             xmlns:local="clr-namespace:ProvinceSpy.WpfGui.Controls" 
+             x:Class="ProvinceSpy.WpfGui.Controls.ProvinceUserControl" 
+             mc:Ignorable="d" Height="200" Width="200">
     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,10,10">
         <Label Content="ProvinceName"/>
         <local:FarmsUserControl/>
