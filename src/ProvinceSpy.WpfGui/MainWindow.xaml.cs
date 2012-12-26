@@ -36,13 +36,18 @@ namespace ProvinceSpy.WpfGui
                     var provinceHistory = new ProvinceHistory(neighbour);
                     provinceHistories.Add(provinceHistory);
                     // TODO should be from model not from this loop
+                    var firstPrediction = predictor.Predict(provinceHistory).First();
                     viewModel.DatabaseObjects.Add(new MyTemporaryObject
                         {
                             ProvinceViewModel = new ProvinceViewModel
                                 {
                                     ProvinceName = neighbour,
-                                    FarmsViewModel = new FarmsViewModel {FarmsCount = 3},
-                                    BuildPrediction = predictor.Predict(provinceHistory).First(),
+                                    FarmsViewModel = new FarmsViewModel { FarmsCount = 3 },
+                                    BuildPrediction = new BuildPredictionViewModel
+                                        {
+                                            Building = firstPrediction.Building,
+                                            TurnsLeft = firstPrediction.TurnsLeft
+                                        },
                                 }
                         });
                 }

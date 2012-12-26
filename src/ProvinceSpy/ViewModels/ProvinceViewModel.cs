@@ -5,7 +5,7 @@
         // TODO not a INPC
         public string ProvinceName { get; set; }
         private FarmsViewModel farmsViewModel;
-        public BuildPrediction BuildPrediction { get; set; }
+        public BuildPredictionViewModel BuildPrediction { get; set; }
 
         public FarmsViewModel FarmsViewModel 
         { 
