@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using ProvinceSpy.WpfGui.Annotations;
+﻿using System.Collections.Generic;
+using ProvinceSpy.WpfGui.Common;
 
 namespace ProvinceSpy.WpfGui.ViewModels
 {
-    public class CapitalViewModel : INotifyPropertyChanged
+    public class CapitalViewModel : ViewModelBase
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        // TODO not a INPC
         public List<string> Countries { get; private set; }
 
         public CapitalViewModel()
@@ -20,13 +17,6 @@ namespace ProvinceSpy.WpfGui.ViewModels
                     "Grenada",
                     "Ulster",
                 });
-        }
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            var handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

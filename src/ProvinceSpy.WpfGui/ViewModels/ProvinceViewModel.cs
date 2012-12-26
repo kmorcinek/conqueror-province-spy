@@ -1,25 +1,16 @@
-﻿using System.ComponentModel;
-using ProvinceSpy.WpfGui.Annotations;
+﻿using ProvinceSpy.WpfGui.Common;
 
 namespace ProvinceSpy.WpfGui.ViewModels
 {
-    public class ProvinceViewModel : INotifyPropertyChanged
+    public class ProvinceViewModel : ViewModelBase
     {
+        // TODO not a INPC
         public string ProvinceName { get; set; }
         public FarmsViewModel FarmsViewModel { get; set; }
 
         public ProvinceViewModel()
         {
             FarmsViewModel = new FarmsViewModel();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            var handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
