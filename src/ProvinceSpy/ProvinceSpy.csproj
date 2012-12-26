@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buildings.cs" />
     <Compile Include="BuildPrediction.cs" />
     <Compile Include="NeighbourProvider.cs">
       <SubType>Code</SubType>
@@ -47,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvinceHistory.cs" />
     <Compile Include="ProvinceRevision.cs" />
+    <Compile Include="ViewModels\BuildPredictionViewModel.cs" />
     <Compile Include="ViewModels\CapitalViewModel.cs" />
     <Compile Include="ViewModels\FarmsViewModel.cs" />
     <Compile Include="ViewModels\ProvinceViewModel.cs" />

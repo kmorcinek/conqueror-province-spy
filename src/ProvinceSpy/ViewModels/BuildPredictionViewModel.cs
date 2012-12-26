@@ -1,6 +1,6 @@
-﻿namespace ProvinceSpy
+﻿namespace ProvinceSpy.ViewModels
 {
-    public class BuildPrediction
+    public class BuildPredictionViewModel : ViewModelBase
     {
         public Buildings Building { get; set; }
         public int TurnsLeft { get; set; } 
