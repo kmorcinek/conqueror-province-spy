@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using ProvinceSpy.WpfGui.Controls;
+using System.Windows.Controls;
 using ProvinceSpy.WpfGui.ViewModels;
 
 namespace ProvinceSpy.WpfGui
@@ -9,38 +9,26 @@ namespace ProvinceSpy.WpfGui
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly CapitalViewModel viewModel;
+        private readonly CapitalViewModel viewModel = new CapitalViewModel();
 
         public MainWindow()
         {
             InitializeComponent();
-            viewModel = new CapitalViewModel();
-            viewModel.DatabaseObjects.Add(new MyTempraryObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Walachia" } });
             DataContext = viewModel;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            viewModel.DatabaseObjects.Add(new MyTempraryObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Burg" } });
-
-            return;
-
-            var names = new[]
-                {
-                    "Poland",
-                    "Holland",
-                };
-
-            foreach (var name in names)
+            var capital = cmbCapital.SelectedValue;
+            if (capital != null)
             {
-                var provinceViewModel = new ProvinceViewModel {ProvinceName = name};
+                foreach (var neighbour in new NeighbourProvider().GetNeighbours(capital.ToString()))
+                {
+                    viewModel.DatabaseObjects.Add(new MyTempraryObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = neighbour } });
+                }
 
-                var province = new ProvinceUserControl {DataContext = provinceViewModel};
+                (sender as Button).Visibility = Visibility.Hidden;
             }
-
-            // TODO ICollectionView for province list
-
-
         }
     }
 }

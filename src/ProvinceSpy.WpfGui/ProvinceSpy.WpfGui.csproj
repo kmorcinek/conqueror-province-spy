@@ -116,6 +116,12 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProvinceSpy\ProvinceSpy.csproj">
+      <Project>{d75ba7f3-1e4d-475e-b25f-567a7fb56ddf}</Project>
+      <Name>ProvinceSpy</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
