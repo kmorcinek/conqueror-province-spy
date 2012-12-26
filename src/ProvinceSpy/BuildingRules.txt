@@ -1,0 +1,1 @@
+﻿Province working on soldiers, keep building soldiers up to 2*farmsCount.

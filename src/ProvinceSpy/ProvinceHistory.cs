@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics.Contracts;
+using System.Collections.ObjectModel;
 
 namespace ProvinceSpy
 {
     public class ProvinceHistory
     {
         private readonly string provinceName;
-        private readonly LinkedList<ProvinceRevision> revisions = new LinkedList<ProvinceRevision>();
+        private readonly List<ProvinceRevision> revisions = new List<ProvinceRevision>();
 
         public ProvinceHistory(string provinceName)
         {
@@ -18,9 +18,17 @@ namespace ProvinceSpy
             get { return provinceName; }
         }
 
+        public ReadOnlyCollection<ProvinceRevision> Revisions
+        {
+            get
+            {
+                return new ReadOnlyCollection<ProvinceRevision>(revisions);
+            }
+        }
+
         public void Add(ProvinceRevision revision)
         {
-            revisions.AddLast(revision);
+            revisions.Add(revision);
         }
     }
 }

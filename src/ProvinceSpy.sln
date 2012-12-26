@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvinceSpy.Tests", "Provin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvinceSpy.WpfGui", "ProvinceSpy.WpfGui\ProvinceSpy.WpfGui.csproj", "{5FF32B26-28FB-48B0-A5C0-2EB22AAFB041}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{167AEB83-FF63-41C7-84CD-449C212CCE2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
