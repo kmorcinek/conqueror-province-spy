@@ -25,41 +25,25 @@ namespace ProvinceSpy.WpfGui
         {
             InitializeComponent();
             var vm = new WindowViewModel();
-            vm.DatabaseObjects.Add(new MyDatabaseObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Burg" }, DbName = "a" });
-            vm.DatabaseObjects.Add(new MyDatabaseObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Walachia" }, DbName = "b" });
+            vm.DatabaseObjects.Add(new MyTempraryObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Burg" } });
+            vm.DatabaseObjects.Add(new MyTempraryObject { ProvinceViewModel = new ProvinceViewModel { ProvinceName = "Walachia" } });
             DataContext = vm;
         }
     }
 
     public class WindowViewModel
     {
-        public ObservableCollection<MyDatabaseObject> DatabaseObjects { get; set; }
+        public ObservableCollection<MyTempraryObject> DatabaseObjects { get; set; }
 
         public WindowViewModel()
         {
-            DatabaseObjects = new ObservableCollection<MyDatabaseObject>();
+            DatabaseObjects = new ObservableCollection<MyTempraryObject>();
         }
     }
 
 
-    public class MyDatabaseObject : INotifyPropertyChanged
+    public class MyTempraryObject
     {
         public ProvinceViewModel ProvinceViewModel { get; set; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private string _dbName;
-
-        public string DbName { get; set; }
-//        public string DbName
-//        {
-//            get { return _dbName; }
-//            set
-//            {
-//                _dbName = value;
-//                if (PropertyChanged != null)
-//                    PropertyChanged(this, new PropertyChangedEventArgs("DbName"));
-//            }
-//        }
     }
 }
