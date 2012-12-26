@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using ProvinceSpy.WpfGui.Common;
 
-namespace ProvinceSpy.WpfGui.ViewModels
+namespace ProvinceSpy.ViewModels
 {
     public class CapitalViewModel : ViewModelBase
     {

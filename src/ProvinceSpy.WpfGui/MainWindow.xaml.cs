@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using ProvinceSpy.WpfGui.ViewModels;
+using ProvinceSpy.ViewModels;
 using System.Linq;
 
 namespace ProvinceSpy.WpfGui

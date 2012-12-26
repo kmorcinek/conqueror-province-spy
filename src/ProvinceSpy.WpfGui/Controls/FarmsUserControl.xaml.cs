@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Controls;
+using ProvinceSpy.ViewModels;
 using ProvinceSpy.WpfGui.Annotations;
-using ProvinceSpy.WpfGui.ViewModels;
 
 namespace ProvinceSpy.WpfGui.Controls
 {

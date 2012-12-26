@@ -47,6 +47,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvinceHistory.cs" />
     <Compile Include="ProvinceRevision.cs" />
+    <Compile Include="ViewModels\CapitalViewModel.cs" />
+    <Compile Include="ViewModels\FarmsViewModel.cs" />
+    <Compile Include="ViewModels\ProvinceViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

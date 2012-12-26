@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq.Expressions;
 
-namespace ProvinceSpy.WpfGui.Common
+namespace ProvinceSpy.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
