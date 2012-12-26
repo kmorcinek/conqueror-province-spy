@@ -6,7 +6,10 @@ namespace ProvinceSpy
     {
         public IEnumerable<BuildPrediction> Predict(ProvinceHistory provinceHistory)
         {
-            return new BuildPrediction[0];
+            return new []
+                {
+                    new BuildPrediction{TurnsLeft = 4, Building = Buildings.Farm}, 
+                };
         }
     }
 }

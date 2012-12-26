@@ -9,7 +9,8 @@
                 DataContextChanged="ProvinceUserControl_OnDataContextChanged">
     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,10,10">
         <Label HorizontalAlignment="Center" Content="{Binding Path=ProvinceName}"/>
-        <local:FarmsUserControl x:Name="farmsUserControl"/>
+        <local:FarmsUserControl x:Name="FarmsUserControl"/>
         <Button Content="Done" Margin="15"/>
+        <local:BuildPredictionUserControl x:Name="BuildPredictionUserControl"/>
     </StackPanel>
 </UserControl>

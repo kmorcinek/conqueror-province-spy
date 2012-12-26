@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="200">
     <Grid>
-        <Label Content="koni"></Label>
-        <Label Content="koni" HorizontalAlignment="Right"></Label>
+        <Label Content="{Binding Path=Building}"></Label>
+        <Label Content="{Binding Path=TurnsLeft}" HorizontalAlignment="Right"></Label>
     </Grid>
 </UserControl>

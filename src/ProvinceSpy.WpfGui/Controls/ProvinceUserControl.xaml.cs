@@ -16,7 +16,8 @@ namespace ProvinceSpy.WpfGui.Controls
             var provinceViewModel = this.DataContext as ProvinceViewModel;
             if (provinceViewModel != null)
             {
-                farmsUserControl.DataContext = provinceViewModel.FarmsViewModel; 
+                FarmsUserControl.DataContext = provinceViewModel.FarmsViewModel;
+                BuildPredictionUserControl.DataContext = provinceViewModel.BuildPrediction;
             }
         }
     }

@@ -6,13 +6,10 @@ using System.Linq;
 
 namespace ProvinceSpy.WpfGui
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private readonly CapitalViewModel viewModel = new CapitalViewModel();
-        private readonly List<ProvinceHistory> history = new List<ProvinceHistory>();
+        private readonly List<ProvinceHistory> provinceHistories = new List<ProvinceHistory>();
 
         public MainWindow()
         {
@@ -25,18 +22,28 @@ namespace ProvinceSpy.WpfGui
             var capital = cmbCapital.SelectedValue;
             if (capital != null)
             {
+                var predictor = new Predictor();
                 foreach (var neighbour in new NeighbourProvider().GetNeighbours(capital.ToString()))
                 {
-                    history.Add(new ProvinceHistory(neighbour));
+                    var provinceHistory = new ProvinceHistory(neighbour);
+                    provinceHistories.Add(provinceHistory);
                     // TODO should be from model not from this loop
-                    viewModel.DatabaseObjects.Add(new MyTemporaryObject { ProvinceViewModel = new ProvinceViewModel
-                        {
-                            ProvinceName = neighbour,
-                            FarmsViewModel = new FarmsViewModel{FarmsCount=3},
-                        } });
+                    viewModel.DatabaseObjects.Add(new MyTemporaryObject
+                    {
+                        ProvinceViewModel = new ProvinceViewModel
+                            {
+                                ProvinceName = neighbour,
+                                FarmsViewModel = new FarmsViewModel { FarmsCount = 3 },
+                                BuildPrediction = predictor.Predict(provinceHistory).FirstOrDefault(),
+                            }
+                    });
                 }
+                var button = sender as Button;
 
-                (sender as Button).Visibility = Visibility.Hidden;
+                if (button != null)
+                {
+                    button.Visibility = Visibility.Hidden;
+                }
             }
         }
 
@@ -44,15 +51,20 @@ namespace ProvinceSpy.WpfGui
         {
             foreach (var provinceViewModel in this.viewModel.DatabaseObjects.Select(p => p.ProvinceViewModel))
             {
-                var provinceHistory = history.Single(p => p.ProvinceName == provinceViewModel.ProvinceName);
-                
+                var provinceHistory = provinceHistories.Single(p => p.ProvinceName == provinceViewModel.ProvinceName);
+
                 provinceHistory.Add(new ProvinceRevision(provinceViewModel.FarmsViewModel.FarmsCount));
-                
+
                 var predictor = new Predictor();
                 var buildPredictions = predictor.Predict(provinceHistory);
-                
+
                 provinceViewModel.BuildPrediction = buildPredictions.FirstOrDefault();
             }
+        }
+
+        private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            Button_Click_1(this, RoutedEventArgs.Empty as RoutedEventArgs);
         }
     }
 }
