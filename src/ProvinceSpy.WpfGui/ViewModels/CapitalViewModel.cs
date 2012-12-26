@@ -8,11 +8,11 @@ namespace ProvinceSpy.WpfGui.ViewModels
     {
         // TODO not a INPC
         public List<string> Countries { get; private set; }
-        public ObservableCollection<MyTempraryObject> DatabaseObjects { get; set; }
+        public ObservableCollection<MyTemporaryObject> DatabaseObjects { get; set; }
 
         public CapitalViewModel()
         {
-            DatabaseObjects = new ObservableCollection<MyTempraryObject>();
+            DatabaseObjects = new ObservableCollection<MyTemporaryObject>();
         
             // TODO is it needed
             Countries = new List<string>();
@@ -24,7 +24,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
         }
     }
 
-    public class MyTempraryObject
+    public class MyTemporaryObject
     {
         public ProvinceViewModel ProvinceViewModel { get; set; }
     }

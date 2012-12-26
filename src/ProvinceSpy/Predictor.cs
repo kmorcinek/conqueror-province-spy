@@ -4,7 +4,7 @@ namespace ProvinceSpy
 {
     public class Predictor
     {
-        IEnumerable<BuildPrediction> Predict(List<ProvinceRevision> revisions)
+        public IEnumerable<BuildPrediction> Predict(ProvinceHistory provinceHistory)
         {
             return new BuildPrediction[0];
         }

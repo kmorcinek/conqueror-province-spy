@@ -7,6 +7,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
         // TODO not a INPC
         public string ProvinceName { get; set; }
         public FarmsViewModel FarmsViewModel { get; set; }
+        public BuildPrediction BuildPrediction { get; set; }
 
         public ProvinceViewModel()
         {
