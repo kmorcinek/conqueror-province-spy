@@ -56,8 +56,14 @@
     <Compile Include="Controls\FarmsUserControl.xaml.cs">
       <DependentUpon>FarmsUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\MyUserControl.xaml.cs">
+      <DependentUpon>MyUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ProvinceUserControl.xaml.cs">
       <DependentUpon>ProvinceUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PanelWindow.xaml.cs">
+      <DependentUpon>PanelWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ProvinceWindow.xaml.cs">
@@ -67,6 +73,10 @@
     <Compile Include="ViewModels\FarmsViewModel.cs" />
     <Compile Include="ViewModels\ProvinceViewModel.cs" />
     <Page Include="Controls\FarmsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MyUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -86,6 +96,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PanelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ProvinceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

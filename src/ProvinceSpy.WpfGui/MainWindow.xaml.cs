@@ -29,6 +29,8 @@ namespace ProvinceSpy.WpfGui
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            new PanelWindow().Show();
+            return;
 //            new ProvinceWindow().Show();
 
             var names = new[]
