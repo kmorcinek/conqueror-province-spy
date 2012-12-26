@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\ViewModelBase.cs" />
     <Compile Include="Controls\FarmsUserControl.xaml.cs">
       <DependentUpon>FarmsUserControl.xaml</DependentUpon>
     </Compile>
