@@ -14,6 +14,11 @@ namespace ProvinceSpy
             return JsonNetSerializer.DeserializeFromString<Dictionary<string, string[]>>(content);
         }
 
+        public IEnumerable<string> GetCapitals()
+        {
+            return neighbours.Keys;
+        }
+
         public IEnumerable<string> GetNeighbours(string province)
         {
             string[] neighboursCollection;
