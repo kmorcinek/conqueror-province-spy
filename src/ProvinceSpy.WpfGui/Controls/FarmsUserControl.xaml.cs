@@ -1,5 +1,4 @@
 ﻿using System.Windows.Controls;
-using ProvinceSpy.ViewModels;
 
 namespace ProvinceSpy.WpfGui.Controls
 {
@@ -14,16 +13,6 @@ namespace ProvinceSpy.WpfGui.Controls
             :this()
         {
             lbl.Content = label;
-        }
-
-        private void Button_Click_1(object sender, System.Windows.RoutedEventArgs e)
-        {
-            var vm = DataContext as FarmsViewModel;
-
-            if (vm != null)
-            {
-                vm.FarmsCount++;
-            }
         }
     }
 }

@@ -10,7 +10,7 @@
         <TextBox HorizontalAlignment="Center" Height="23" Margin="0,6,0,6" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsReadOnly="True"
                  Text="{Binding Path=FarmsCount, Mode=OneWay}">
         </TextBox>
-        <Button Content="Up" HorizontalAlignment="Right" Margin="0,7,10,7" Width="41" Click="Button_Click_1"/>
+        <Button Content="Up" HorizontalAlignment="Right" Margin="0,7,10,7" Width="41" Command="{Binding Path=IncreaseCount}"/>
 
     </Grid>
 </UserControl>
