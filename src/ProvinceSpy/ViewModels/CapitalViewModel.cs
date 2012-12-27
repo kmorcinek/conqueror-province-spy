@@ -9,6 +9,16 @@ namespace ProvinceSpy.ViewModels
         public IEnumerable<string> Countries { get; private set; }
         public ObservableCollection<MyTemporaryObject> DatabaseObjects { get; set; }
 
+        private int turn = 1;
+        public int Turn
+        {
+            get { return this.turn; }
+            set
+            {
+                SetField(ref this.turn, value, () => this.Turn);
+            }
+        }
+
         public CapitalViewModel()
         {
             DatabaseObjects = new ObservableCollection<MyTemporaryObject>();

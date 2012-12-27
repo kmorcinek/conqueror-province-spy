@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 using ProvinceSpy.ViewModels;
 using System.Linq;
 
@@ -16,16 +17,20 @@ namespace ProvinceSpy.WpfGui
             DataContext = viewModel;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void StartButtonClick(object sender, RoutedEventArgs e)
         {
-            foreach (var provinceViewModel in this.viewModel.DatabaseObjects.Select(p => p.ProvinceViewModel))
+            SetUp();
+            var button = sender as Button;
+
+            if (button != null)
             {
-                provinceViewModel.BuildPrediction.Building = Buildings.Soldiers;
+                button.Visibility = Visibility.Hidden;
             }
         }
 
         private void SetUp()
         {
+            viewModel.DatabaseObjects.Clear();
             var capital = cmbCapital.SelectedValue;
             if (capital != null)
             {
@@ -40,8 +45,8 @@ namespace ProvinceSpy.WpfGui
                     var provinceViewModel = new ProvinceViewModel
                         {
                             ProvinceName = neighbour, 
-                            FarmsViewModel = new FarmsViewModel {FarmsCount = 3}, 
-                            SoldiersViewModel = new FarmsViewModel{FarmsCount = 8},
+                            FarmsViewModel = new FarmsViewModel {FarmsCount = 1}, 
+                            SoldiersViewModel = new FarmsViewModel{FarmsCount = 1},
                             CultureViewModel = new CultureViewModel(),
                             BuildPrediction = new BuildPredictionViewModel
                                 {
@@ -71,6 +76,8 @@ namespace ProvinceSpy.WpfGui
 
         private void NextTurnClick(object sender, RoutedEventArgs e)
         {
+            viewModel.Turn++;
+
             foreach (var provinceViewModel in this.viewModel.DatabaseObjects.Select(p => p.ProvinceViewModel))
             {
                 var provinceHistory = provinceHistories.Single(p => p.ProvinceName == provinceViewModel.ProvinceName);

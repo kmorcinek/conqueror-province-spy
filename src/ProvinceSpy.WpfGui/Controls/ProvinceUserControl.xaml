@@ -9,7 +9,7 @@
                 DataContextChanged="ProvinceUserControl_OnDataContextChanged">
     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,10,10">
         <Button Content="X" Width="20" HorizontalAlignment="Right" Command="{Binding Path=RemoveProvinceCommand}"/>
-        <Label HorizontalAlignment="Center" Content="{Binding ProvinceName}"/>
+        <Label HorizontalAlignment="Center" Content="{Binding ProvinceName}" FontSize="20" FontWeight="Bold"/>
         <local:FarmsUserControl x:Name="FarmsUserControl"/>
         <local:SoldiersUserControl x:Name="SoldiersUserControl"/>
         <local:CultureUserControl x:Name="CultureUserControl"/>

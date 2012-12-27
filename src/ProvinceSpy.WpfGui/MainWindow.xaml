@@ -7,8 +7,10 @@
     <Grid>
         <ComboBox HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="193" x:Name="cmbCapital"
     		ItemsSource="{Binding Countries}" SelectedIndex="0"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="223,38,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="223,38,0,0" VerticalAlignment="Top" Width="75" Click="StartButtonClick"/>
         <Button Content="Next turn" HorizontalAlignment="Left" Margin="359,38,0,0" VerticalAlignment="Top" Width="75" Click="NextTurnClick"/>
+        <Label Content="Turn:" HorizontalAlignment="Right" Margin="0,15,55,0"></Label>
+        <Label Content="{Binding Turn}" HorizontalAlignment="Right" Margin="0,15,35,0"></Label>
         <ListBox Margin="10,110,10,10" ItemsSource="{Binding DatabaseObjects}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
