@@ -1,16 +1,27 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 
 namespace ProvinceSpy
 {
     public class NeighbourProvider
     {
+        private const string NeighboursFileName = "neighbours.txt";
+        private static readonly Dictionary<string, string[]> neighbours = GetNeighboursFromFile();
+
+        private static Dictionary<string, string[]> GetNeighboursFromFile()
+        {
+            var content = File.ReadAllText(NeighboursFileName);
+            return JsonNetSerializer.DeserializeFromString<Dictionary<string, string[]>>(content);
+        }
+
         public IEnumerable<string> GetNeighbours(string province)
         {
-            return new[]
-                {
-                    "England",
-                    "Wales",
-                };
+            string[] neighboursCollection;
+
+            if(!neighbours.TryGetValue(province, out neighboursCollection))
+                neighboursCollection = new string[0];
+
+            return neighboursCollection;
         }
     }
 }

@@ -63,6 +63,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\lib\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -76,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Buildings.cs" />
     <Compile Include="BuildPrediction.cs" />
+    <Compile Include="JsonNetSerializer.cs" />
     <Compile Include="NeighbourProvider.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -92,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BuildingRules.txt" />
+    <Content Include="neighbours.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
