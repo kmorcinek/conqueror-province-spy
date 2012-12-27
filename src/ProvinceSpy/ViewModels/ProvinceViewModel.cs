@@ -12,6 +12,7 @@ namespace ProvinceSpy.ViewModels
         private FarmsViewModel farmsViewModel;
         public BuildPredictionViewModel BuildPrediction { get; set; }
         public FarmsViewModel SoldiersViewModel { get; set; }
+        public CultureViewModel CultureViewModel { get; set; }
 
         public FarmsViewModel FarmsViewModel 
         { 

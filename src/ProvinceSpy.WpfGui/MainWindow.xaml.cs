@@ -42,6 +42,7 @@ namespace ProvinceSpy.WpfGui
                             ProvinceName = neighbour, 
                             FarmsViewModel = new FarmsViewModel {FarmsCount = 3}, 
                             SoldiersViewModel = new FarmsViewModel{FarmsCount = 8},
+                            CultureViewModel = new CultureViewModel(),
                             BuildPrediction = new BuildPredictionViewModel
                                 {
                                     Building = firstPrediction.Building, TurnsLeft = firstPrediction.TurnsLeft

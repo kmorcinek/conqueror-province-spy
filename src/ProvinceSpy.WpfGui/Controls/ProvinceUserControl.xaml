@@ -12,6 +12,7 @@
         <Label HorizontalAlignment="Center" Content="{Binding Path=ProvinceName}"/>
         <local:FarmsUserControl x:Name="FarmsUserControl"/>
         <local:SoldiersUserControl x:Name="SoldiersUserControl"/>
+        <local:CultureUserControl x:Name="CultureUserControl"/>
         <local:BuildPredictionUserControl x:Name="BuildPredictionUserControl"/>
     </StackPanel>
 </UserControl>

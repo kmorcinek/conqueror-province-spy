@@ -56,6 +56,9 @@
     <Compile Include="Controls\BuildPredictionUserControl.xaml.cs">
       <DependentUpon>BuildPredictionUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CultureUserControl.xaml.cs">
+      <DependentUpon>CultureUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FarmsUserControl.xaml.cs">
       <DependentUpon>FarmsUserControl.xaml</DependentUpon>
     </Compile>
@@ -68,6 +71,10 @@
       <DependentUpon>ProvinceWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Controls\BuildPredictionUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CultureUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

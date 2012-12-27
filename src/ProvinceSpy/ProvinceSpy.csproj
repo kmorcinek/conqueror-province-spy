@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Buildings.cs" />
     <Compile Include="BuildPrediction.cs" />
+    <Compile Include="CultureLevel.cs" />
     <Compile Include="JsonNetSerializer.cs" />
     <Compile Include="NeighbourProvider.cs">
       <SubType>Code</SubType>
@@ -90,6 +91,7 @@
     <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModels\BuildPredictionViewModel.cs" />
     <Compile Include="ViewModels\CapitalViewModel.cs" />
+    <Compile Include="ViewModels\CultureViewModel.cs" />
     <Compile Include="ViewModels\FarmsViewModel.cs" />
     <Compile Include="ViewModels\ProvinceViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
