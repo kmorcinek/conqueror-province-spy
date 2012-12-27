@@ -36,19 +36,31 @@ namespace ProvinceSpy.WpfGui
                     provinceHistories.Add(provinceHistory);
                     // TODO should be from model not from this loop
                     var firstPrediction = predictor.Predict(provinceHistory).First();
+                    
+                    var provinceViewModel = new ProvinceViewModel
+                        {
+                            ProvinceName = neighbour, FarmsViewModel = new FarmsViewModel {FarmsCount = 3}, BuildPrediction = new BuildPredictionViewModel
+                                {
+                                    Building = firstPrediction.Building, TurnsLeft = firstPrediction.TurnsLeft
+                                },
+                        };
+                    provinceViewModel.ProvinceRemoved += provinceViewModel_OnProvinceRemoved;
+            
                     viewModel.DatabaseObjects.Add(new MyTemporaryObject
                         {
-                            ProvinceViewModel = new ProvinceViewModel
-                                {
-                                    ProvinceName = neighbour,
-                                    FarmsViewModel = new FarmsViewModel { FarmsCount = 3 },
-                                    BuildPrediction = new BuildPredictionViewModel
-                                        {
-                                            Building = firstPrediction.Building,
-                                            TurnsLeft = firstPrediction.TurnsLeft
-                                        },
-                                }
+                            ProvinceViewModel = provinceViewModel
                         });
+                }
+            }
+        }
+
+        void provinceViewModel_OnProvinceRemoved(ProvinceViewModel removedProvince)
+        {
+            for (int i = 0; i < viewModel.DatabaseObjects.Count; i++)
+            {
+                if (viewModel.DatabaseObjects[i].ProvinceViewModel == removedProvince)
+                {
+                    viewModel.DatabaseObjects.RemoveAt(i);
                 }
             }
         }
