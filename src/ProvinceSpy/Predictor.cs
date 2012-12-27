@@ -32,6 +32,7 @@ namespace ProvinceSpy
             var lastIndex = revisions.Count - 1;
             var last = revisions[lastIndex];
             var currentFarmsCount = last.FarmsCount;
+            var currentSoldiersCount = last.SoldiersCount;
             var currentCulture = last.CultureLevel;
 
             for (int i = lastIndex - 1; i >= 0; i--)
@@ -40,6 +41,10 @@ namespace ProvinceSpy
                 if (currentRevision.FarmsCount < currentFarmsCount)
                 {
                     return Buildings.Farm;
+                }
+                if (currentRevision.SoldiersCount < currentSoldiersCount)
+                {
+                    return Buildings.Soldiers;
                 }
                 if ((int)currentRevision.CultureLevel < (int)currentCulture)
                 {

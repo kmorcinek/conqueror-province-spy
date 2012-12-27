@@ -75,7 +75,11 @@ namespace ProvinceSpy.WpfGui
             {
                 var provinceHistory = provinceHistories.Single(p => p.ProvinceName == provinceViewModel.ProvinceName);
 
-                provinceHistory.Add(new ProvinceRevision(provinceViewModel.FarmsViewModel.FarmsCount));
+                provinceHistory.Add(
+                    new ProvinceRevision(
+                        provinceViewModel.FarmsViewModel.FarmsCount, 
+                        provinceViewModel.SoldiersViewModel.FarmsCount, 
+                        provinceViewModel.CultureViewModel.CultureLevel));
 
                 var predictor = new Predictor();
                 var buildPredictions = predictor.Predict(provinceHistory);

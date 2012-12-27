@@ -35,12 +35,31 @@ namespace ProvinceSpy.Tests
         }
 
         [Test]
+        public void GetLastBuilt_RevisionDiffersBySoldiers_SoldierWasBuilt()
+        {
+            provinceHistory.Add(ProvinceRevisionFactory.FromSoldiersCount(5));
+            provinceHistory.Add(ProvinceRevisionFactory.FromSoldiersCount(6));
+
+            predictor.GetLastBuilt(provinceHistory.Revisions).Value.Should().Be(Buildings.Soldiers);
+        }
+
+        [Test]
         public void GetLastBuilt_RevisionDiffersByCulture_CultureWasBuilt()
         {
             provinceHistory.Add(ProvinceRevisionFactory.FromCulture(CultureLevel.Developed));
             provinceHistory.Add(ProvinceRevisionFactory.FromCulture(CultureLevel.Advanced));
 
             predictor.GetLastBuilt(provinceHistory.Revisions).Value.Should().Be(Buildings.Culture);
+        }
+
+        [Test]
+        public void GetLastBuilt_RevisionDiffersByCultureAndThenByFarms_FarmWasBuilt()
+        {
+            provinceHistory.Add(ProvinceRevisionFactory.FromFarmsAndCulture(3, CultureLevel.Primitive));
+            provinceHistory.Add(ProvinceRevisionFactory.FromFarmsAndCulture(3, CultureLevel.Developed));
+            provinceHistory.Add(ProvinceRevisionFactory.FromFarmsAndCulture(4, CultureLevel.Developed));
+
+            predictor.GetLastBuilt(provinceHistory.Revisions).Value.Should().Be(Buildings.Farm);
         }
     }
 }
