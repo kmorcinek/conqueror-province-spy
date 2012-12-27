@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="PredictorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProvinceRevisionFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

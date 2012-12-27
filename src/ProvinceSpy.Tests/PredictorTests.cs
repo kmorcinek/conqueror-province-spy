@@ -11,8 +11,8 @@ namespace ProvinceSpy.Tests
         {
             var predictor = new Predictor();
             var provinceHistory = new ProvinceHistory("");
-            provinceHistory.Add(new ProvinceRevision(1));
-            provinceHistory.Add(new ProvinceRevision(2));
+            provinceHistory.Add(ProvinceRevisionFactory.FromFarmsCount(1));
+            provinceHistory.Add(ProvinceRevisionFactory.FromFarmsCount(2));
 
             predictor.GetLastBuilt(provinceHistory.Revisions).Value.Should().Be(Buildings.Farm);
         }
@@ -22,8 +22,8 @@ namespace ProvinceSpy.Tests
         {
             var predictor = new Predictor();
             var provinceHistory = new ProvinceHistory("");
-            provinceHistory.Add(new ProvinceRevision(2));
-            provinceHistory.Add(new ProvinceRevision(2));
+            provinceHistory.Add(ProvinceRevisionFactory.FromFarmsCount(2));
+            provinceHistory.Add(ProvinceRevisionFactory.FromFarmsCount(2));
 
             predictor.GetLastBuilt(provinceHistory.Revisions).HasValue.Should().BeFalse();
         }
