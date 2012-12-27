@@ -62,6 +62,7 @@
     <Compile Include="Controls\ProvinceUserControl.xaml.cs">
       <DependentUpon>ProvinceUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SoldiersUserControl.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ProvinceWindow.xaml.cs">
       <DependentUpon>ProvinceWindow.xaml</DependentUpon>

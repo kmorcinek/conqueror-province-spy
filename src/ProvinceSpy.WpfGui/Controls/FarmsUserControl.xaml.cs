@@ -10,6 +10,12 @@ namespace ProvinceSpy.WpfGui.Controls
             InitializeComponent();
         }
 
+        protected FarmsUserControl(string label)
+            :this()
+        {
+            lbl.Content = label;
+        }
+
         private void Button_Click_1(object sender, System.Windows.RoutedEventArgs e)
         {
             var vm = DataContext as FarmsViewModel;
