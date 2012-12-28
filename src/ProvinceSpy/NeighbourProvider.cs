@@ -10,8 +10,16 @@ namespace ProvinceSpy
 
         private static Dictionary<string, string[]> GetNeighboursFromFile()
         {
-            var content = File.ReadAllText(NeighboursFileName);
-            return JsonNetSerializer.DeserializeFromString<Dictionary<string, string[]>>(content);
+            try
+            {
+                var content = File.ReadAllText(NeighboursFileName);
+                return JsonNetSerializer.DeserializeFromString<Dictionary<string, string[]>>(content);
+            }
+            catch (FileNotFoundException)
+            {
+                // TODO log error show error,
+                return new Dictionary<string, string[]>();
+            }
         }
 
         public IEnumerable<string> GetCapitals()

@@ -2,9 +2,13 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:ProvinceSpy.WpfGui.Controls"
+        xmlns:viewModels="clr-namespace:ProvinceSpy.ViewModels;assembly=ProvinceSpy"
         x:Class="ProvinceSpy.WpfGui.MainWindow"
         Title="ProvinceSpy" Height="578.833" Width="700">
-    <Grid>
+    <Window.Resources>
+        <viewModels:MainWindowsViewModel x:Key="MainWindowsViewModel"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource MainWindowsViewModel}">
         <ComboBox HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="193" x:Name="cmbCapital"
     		ItemsSource="{Binding Countries}" SelectedItem="{Binding SelectedCapital}" />
         <Button Content="Change capital" HorizontalAlignment="Left" Margin="223,38,0,0" VerticalAlignment="Top" Width="100" Command="{Binding ChangeCapitalCommand}"/>
