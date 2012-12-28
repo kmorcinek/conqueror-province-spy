@@ -1,7 +1,8 @@
 {
-"Ulster":["Wales","Eire","Scotland","Northumberland","England","Norway","Flanders","Brittany","Normandy","Holland"],
-"Grenada":["Castile","Aragon","Leon","Portugal","Tangiers","Marocco","Algiers","Gascony","Aquitaine"],
+"Ulster":["Wales","Eire","Scotland","Northumberland","England","Norway","Flanders","Brittany","Normandy"],
+"Grenada":["Castile","Aragon","Leon","Portugal","Tangiers","Marocco","Algiers","Gascony","Aquitaine","Iledefrance"],
 "Roma":["Genoa","Venetia","Napoli","Corsica","Provence","Burgundy","Helvetica","Austria","Dalmatia","Sicilia","Sardinia"],
-"Nicea":["Byzantium","Natolia","Crete","Greece","Macedonia","Bulgaria","Syria","Cyprus"],
-"Lithuania":["Muscovia","Ukraine","Podolia","Poland","Walachia","Bulgaria","Hungary","Finland"],
+"Nicea":["Byzantium","Natolia","Crete","Greece","Macedonia","Bulgaria","Syria","Cyprus","Walachia","Serbia","Palestine","Egypt"],
+"Lithuania":["Muscovy","Ukraine","Podolia","Prussia","Livonia","Poland","Finland","Crimea","Moldavia","Walachia","Bulgaria","Hungary","Transylvania"],
+"Saxony":["Holland","Hanover","Brandenburg","Bohemia","Rhineland","Luxembourg","Flanders","Denmark","Hungary","Austria","Helvetica","Burgundy","Genoa","Venetia"],
 }

@@ -23,14 +23,37 @@ namespace ProvinceSpy
         }
 
         [Pure]
+        internal int? GetTurnsFromLastBuilt(ReadOnlyCollection<ProvinceRevision> revisions)
+        {
+            var result = GetLastBuiltAndTurnAgo(revisions);
+
+            int? turnsAgo = null;
+            if (result.HasValue)
+                turnsAgo = result.Value.TurnsAge;
+
+            return turnsAgo;
+        }
+
+        [Pure]
         internal Buildings? GetLastBuilt(ReadOnlyCollection<ProvinceRevision> revisions)
+        {
+            var result = GetLastBuiltAndTurnAgo(revisions);
+
+            Buildings? lastBuilt = null;
+            if (result.HasValue)
+                lastBuilt = result.Value.Builded;
+
+            return lastBuilt;
+        }
+
+        private static BuiltAndTurnsAgo? GetLastBuiltAndTurnAgo(ReadOnlyCollection<ProvinceRevision> revisions)
         {
             Contract.Requires<ArgumentException>(revisions != null);
 
             if (revisions.Count == 0) return null;
 
             var lastIndex = revisions.Count - 1;
-            var last = revisions[lastIndex];
+            var last = LastRevision(revisions);
             var currentFarmsCount = last.FarmsCount;
             var currentSoldiersCount = last.SoldiersCount;
             var currentCulture = last.CultureLevel;
@@ -40,19 +63,36 @@ namespace ProvinceSpy
                 var currentRevision = revisions[i];
                 if (currentRevision.FarmsCount < currentFarmsCount)
                 {
-                    return Buildings.Farm;
+                    return new BuiltAndTurnsAgo(Buildings.Farm, lastIndex - i);
                 }
                 if (currentRevision.SoldiersCount < currentSoldiersCount)
                 {
-                    return Buildings.Soldiers;
+                    return new BuiltAndTurnsAgo(Buildings.Soldiers, lastIndex - i);
                 }
                 if ((int)currentRevision.CultureLevel < (int)currentCulture)
                 {
-                    return Buildings.Culture;
+                    return new BuiltAndTurnsAgo(Buildings.Culture, lastIndex - i);
                 }
             }
 
             return null;
+        }
+
+        private static ProvinceRevision LastRevision(ReadOnlyCollection<ProvinceRevision> revisions)
+        {
+            return revisions[revisions.Count - 1];
+        }
+
+        private struct BuiltAndTurnsAgo
+        {
+            public Buildings Builded;
+            public int TurnsAge;
+
+            public BuiltAndTurnsAgo(Buildings builded, int turnsAge)
+            {
+                Builded = builded;
+                TurnsAge = turnsAge;
+            }
         }
     }
 }
