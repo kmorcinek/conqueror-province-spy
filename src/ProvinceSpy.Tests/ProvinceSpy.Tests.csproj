@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PredictorTests.cs" />
+    <Compile Include="ProductionCapacityTests.cs" />
+    <Compile Include="ProductionCostTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvinceRevisionFactory.cs" />
   </ItemGroup>

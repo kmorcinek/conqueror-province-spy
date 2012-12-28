@@ -80,11 +80,15 @@
     <Compile Include="Buildings.cs" />
     <Compile Include="BuildPrediction.cs" />
     <Compile Include="CultureLevel.cs" />
+    <Compile Include="IProductionCapacity.cs" />
+    <Compile Include="IProductionCost.cs" />
     <Compile Include="JsonNetSerializer.cs" />
     <Compile Include="NeighbourProvider.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Predictor.cs" />
+    <Compile Include="ProductionCapacity.cs" />
+    <Compile Include="ProductionCost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvinceHistory.cs" />
     <Compile Include="ProvinceRevision.cs" />

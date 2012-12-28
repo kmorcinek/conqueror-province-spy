@@ -2,8 +2,8 @@
 {
     public enum CultureLevel
     {
-        Primitive,
-        Developed,
-        Advanced,
+        Primitive = 1,
+        Developed = 2,
+        Advanced = 3,
     }
 }
