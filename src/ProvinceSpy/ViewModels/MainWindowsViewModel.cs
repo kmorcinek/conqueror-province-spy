@@ -1,12 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace ProvinceSpy.ViewModels
 {
-    public class CapitalViewModel : ViewModelBase
+    public class MainWindowsViewModel : ViewModelBase
     {
-        // TODO not a INPC
         public IEnumerable<string> Countries { get; private set; }
+
+        private string selectedCapital;
+        public string SelectedCapital
+        {
+            get { return selectedCapital; }
+            set { SetField(ref this.selectedCapital, value, () => SelectedCapital); }
+        }
+
         public ObservableCollection<MyTemporaryObject> DatabaseObjects { get; set; }
 
         private int turn = 1;
@@ -28,11 +36,12 @@ namespace ProvinceSpy.ViewModels
             get { return SeasonsByTurn[Turn % 4]; }
         }
 
-        public CapitalViewModel()
+        public MainWindowsViewModel()
         {
             DatabaseObjects = new ObservableCollection<MyTemporaryObject>();
 
             Countries = new NeighbourProvider().GetCapitals();
+            SelectedCapital = Countries.FirstOrDefault();
         }
     }
 

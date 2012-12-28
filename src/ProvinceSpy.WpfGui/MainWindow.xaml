@@ -7,7 +7,7 @@
     Loaded="MainWindow_OnLoaded">
     <Grid>
         <ComboBox HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="193" x:Name="cmbCapital"
-    		ItemsSource="{Binding Countries}" SelectedIndex="0"/>
+    		ItemsSource="{Binding Countries}" SelectedItem="{Binding SelectedCapital}" />
         <Button Content="Start" HorizontalAlignment="Left" Margin="223,38,0,0" VerticalAlignment="Top" Width="75" Click="StartButtonClick"/>
         <Button Content="Next turn" HorizontalAlignment="Left" Margin="359,38,0,0" VerticalAlignment="Top" Width="75" Click="NextTurnClick"/>
         <StackPanel Orientation="Horizontal" Margin="0,15,35,0" HorizontalAlignment="Right">

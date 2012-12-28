@@ -8,7 +8,7 @@ namespace ProvinceSpy.WpfGui
 {
     public partial class MainWindow : Window
     {
-        private readonly CapitalViewModel viewModel = new CapitalViewModel();
+        private readonly MainWindowsViewModel viewModel = new MainWindowsViewModel();
         private readonly List<ProvinceHistory> provinceHistories = new List<ProvinceHistory>();
 
         public MainWindow()
@@ -99,6 +99,7 @@ namespace ProvinceSpy.WpfGui
 
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
+//            cmbCapital.SelectedIndex = 0;
             SetUp();
         }
     }
