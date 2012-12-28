@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 
-namespace ProvinceSpy.ViewModels
+namespace ProvinceSpy.WpfGui.ViewModels
 {
     public class MainWindowsViewModel : ViewModelBase
     {

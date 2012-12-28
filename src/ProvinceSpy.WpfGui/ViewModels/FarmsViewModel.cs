@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace ProvinceSpy.ViewModels
+namespace ProvinceSpy.WpfGui.ViewModels
 {
     public class FarmsViewModel : ViewModelBase
     {

@@ -10,8 +10,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ProvinceSpy.ViewModels;
 using ProvinceSpy.WpfGui.Controls;
+using ProvinceSpy.WpfGui.ViewModels;
 
 namespace ProvinceSpy.WpfGui
 {

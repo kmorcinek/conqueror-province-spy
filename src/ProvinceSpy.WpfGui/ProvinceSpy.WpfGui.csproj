@@ -70,6 +70,12 @@
     <Compile Include="ProvinceWindow.xaml.cs">
       <DependentUpon>ProvinceWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\BuildPredictionViewModel.cs" />
+    <Compile Include="ViewModels\CultureViewModel.cs" />
+    <Compile Include="ViewModels\FarmsViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowsViewModel.cs" />
+    <Compile Include="ViewModels\ProvinceViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="Controls\BuildPredictionUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -17,7 +17,7 @@ namespace ProvinceSpy
             }
             catch (FileNotFoundException)
             {
-                // TODO log error show error,
+                // TODO log error, show error
                 return new Dictionary<string, string[]>();
             }
         }

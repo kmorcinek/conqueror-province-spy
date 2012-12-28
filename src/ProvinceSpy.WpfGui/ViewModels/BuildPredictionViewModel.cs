@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Media;
 
-namespace ProvinceSpy.ViewModels
+namespace ProvinceSpy.WpfGui.ViewModels
 {
     public class BuildPredictionViewModel : ViewModelBase
     {

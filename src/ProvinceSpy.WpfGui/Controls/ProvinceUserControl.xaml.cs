@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using ProvinceSpy.ViewModels;
+using ProvinceSpy.WpfGui.ViewModels;
 
 namespace ProvinceSpy.WpfGui.Controls
 {
