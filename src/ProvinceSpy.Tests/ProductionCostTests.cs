@@ -19,5 +19,28 @@ namespace ProvinceSpy.Tests
         {
             productionCost.Calculate(null, Buildings.Soldiers).Should().Be(5);
         }
+
+        [Test]
+        public void Calculate_Having3FarmsBuildFouthFarm_Costs16()
+        {
+            var revision = ProvinceRevisionFactory.FromFarmsCount(3);
+
+            productionCost.Calculate(revision, Buildings.Farm).Should().Be(16);
+        }
+
+        [Test]
+        public void Calculate_Having1FarmsBuildSecondFarm_Costs4()
+        {
+            var revision = ProvinceRevisionFactory.FromFarmsCount(1);
+
+            productionCost.Calculate(revision, Buildings.Farm).Should().Be(4);
+        }
+
+        [Test]
+        public void Calculate_Development_Costs60()
+        {
+            // TODO Fortification assuming Fort (not castle), the same with culture
+            productionCost.Calculate(null, Buildings.Culture).Should().Be(60);
+        }
     }
 }

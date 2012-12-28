@@ -10,21 +10,17 @@ namespace ProvinceSpy
             {
                 case Buildings.Soldiers:
                     return 5;
-//                case Buildings.Diplomats:
-//                    break;
-//                case Buildings.Fortification:
-//                    break;
-//                case Buildings.Farm:
-//                    break;
-//                case Buildings.Gold:
-//                    break;
-//                case Buildings.Culture:
-//                    break;
-//                case Buildings.Unknown:
-//                    break;
+                case Buildings.Fortification:
+                    return 50;
+                case Buildings.Farm:
+                    return (revision.FarmsCount + 1) * (revision.FarmsCount + 1);
+                case Buildings.Culture:
+                    return 60;
+                //                case Buildings.Unknown:
+                //                    break;
                 default:
                     throw new ArgumentOutOfRangeException("target");
             }
-        } 
+        }
     }
 }

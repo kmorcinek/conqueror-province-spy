@@ -32,14 +32,10 @@ namespace ProvinceSpy.WpfGui.ViewModels
                 {
                     case Buildings.Soldiers:
                         return Brushes.Red;
-                    case Buildings.Diplomats:
-                        return Brushes.Peru;
                     case Buildings.Fortification:
                         return Brushes.Black;
                     case Buildings.Farm:
                         return Brushes.Green;
-                    case Buildings.Gold:
-                        return Brushes.Yellow;
                     case Buildings.Culture:
                         return Brushes.Azure;
                     case Buildings.Unknown:
