@@ -3,13 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:ProvinceSpy.WpfGui.Controls"
         x:Class="ProvinceSpy.WpfGui.MainWindow"
-        Title="MainWindow" Height="578.833" Width="700"
-    Loaded="MainWindow_OnLoaded">
+        Title="ProvinceSpy" Height="578.833" Width="700">
     <Grid>
         <ComboBox HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="193" x:Name="cmbCapital"
     		ItemsSource="{Binding Countries}" SelectedItem="{Binding SelectedCapital}" />
-        <Button Content="Start" HorizontalAlignment="Left" Margin="223,38,0,0" VerticalAlignment="Top" Width="75" Click="StartButtonClick"/>
-        <Button Content="Next turn" HorizontalAlignment="Left" Margin="359,38,0,0" VerticalAlignment="Top" Width="75" Click="NextTurnClick"/>
+        <Button Content="Change capital" HorizontalAlignment="Left" Margin="223,38,0,0" VerticalAlignment="Top" Width="100" Command="{Binding ChangeCapitalCommand}"/>
+        <Button Content="Next turn" HorizontalAlignment="Left" Margin="359,38,0,0" VerticalAlignment="Top" Width="75" Command="{Binding NextTurnCommand}"/>
         <StackPanel Orientation="Horizontal" Margin="0,15,35,0" HorizontalAlignment="Right">
             <Label Content="Turn:"></Label>
             <Label Content="{Binding Season}" Width="55"></Label>

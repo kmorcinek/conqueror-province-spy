@@ -7,6 +7,6 @@
              d:DesignHeight="36" d:DesignWidth="160">
     <Grid>
         <Label Content="{Binding Path=CultureLevel, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Top"/>
-        <Button Content="Upgrade" HorizontalAlignment="Right" Margin="0,7,10,7" Width="55" Command="{Binding Path=UpgradeCultureCommand}"/>
+        <Button Content="Upgrade" HorizontalAlignment="Right" Margin="0,7,10,7" Width="55" Command="{Binding UpgradeCultureCommand}"/>
     </Grid>
 </UserControl>
