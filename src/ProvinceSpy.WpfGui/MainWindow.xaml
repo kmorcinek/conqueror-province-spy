@@ -1,7 +1,8 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Controls="clr-namespace:ProvinceSpy.WpfGui.Controls" x:Class="ProvinceSpy.WpfGui.MainWindow"
+        xmlns:Controls="clr-namespace:ProvinceSpy.WpfGui.Controls"
+        x:Class="ProvinceSpy.WpfGui.MainWindow"
         Title="MainWindow" Height="578.833" Width="700"
     Loaded="MainWindow_OnLoaded">
     <Grid>
@@ -9,8 +10,11 @@
     		ItemsSource="{Binding Countries}" SelectedIndex="0"/>
         <Button Content="Start" HorizontalAlignment="Left" Margin="223,38,0,0" VerticalAlignment="Top" Width="75" Click="StartButtonClick"/>
         <Button Content="Next turn" HorizontalAlignment="Left" Margin="359,38,0,0" VerticalAlignment="Top" Width="75" Click="NextTurnClick"/>
-        <Label Content="Turn:" HorizontalAlignment="Right" Margin="0,15,55,0"></Label>
-        <Label Content="{Binding Turn}" HorizontalAlignment="Right" Margin="0,15,35,0"></Label>
+        <StackPanel Orientation="Horizontal" Margin="0,15,35,0" HorizontalAlignment="Right">
+            <Label Content="Turn:"></Label>
+            <Label Content="{Binding Season}" Width="55"></Label>
+            <Label Content="{Binding Turn}" ContentStringFormat="{}(#{0})"></Label>
+        </StackPanel>
         <ListBox Margin="10,110,10,10" ItemsSource="{Binding DatabaseObjects}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>

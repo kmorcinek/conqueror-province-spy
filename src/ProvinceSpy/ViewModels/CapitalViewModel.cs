@@ -16,13 +16,22 @@ namespace ProvinceSpy.ViewModels
             set
             {
                 SetField(ref this.turn, value, () => this.Turn);
+                OnPropertyChanged(() => Season);
             }
+        }
+
+        private static readonly Dictionary<int, string> SeasonsByTurn
+            = new Dictionary<int, string> { { 0, "Winter" }, { 1, "Spring" }, { 2, "Summer" }, { 3, "Autumn" } };
+
+        public string Season
+        {
+            get { return SeasonsByTurn[Turn % 4]; }
         }
 
         public CapitalViewModel()
         {
             DatabaseObjects = new ObservableCollection<MyTemporaryObject>();
-        
+
             Countries = new NeighbourProvider().GetCapitals();
         }
     }
