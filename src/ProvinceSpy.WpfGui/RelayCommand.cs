@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace ProvinceSpy
+namespace ProvinceSpy.WpfGui
 {
     public class RelayCommand : ICommand
     {

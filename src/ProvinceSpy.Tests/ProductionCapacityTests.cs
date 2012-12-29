@@ -15,7 +15,7 @@ namespace ProvinceSpy.Tests
         }
 
         [Test]
-        public void Calculate_TwoFarms_CapacityIs1()
+        public void Calculate_TwoFarms_CapacityIs2()
         {
             var revision = ProvinceRevisionFactory.FromFarmsAndCulture(2, CultureLevel.Primitive);
 

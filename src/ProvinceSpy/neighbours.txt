@@ -1,6 +1,6 @@
 {
 "Ulster":["Wales","Eire","Scotland","Northumberland","England","Norway","Flanders","Brittany","Normandy"],
-"Grenada":["Castile","Aragon","Leon","Portugal","Tangiers","Marocco","Algiers","Gascony","Aquitaine","Iledefrance"],
+"Grenada":["Portugal","Leon","Castile","Aragon","Gascony","Aquitaine","Iledefrance","Marocco","Tangiers","Algiers"],
 "Roma":["Genoa","Venetia","Napoli","Corsica","Provence","Burgundy","Helvetica","Austria","Dalmatia","Sicilia","Sardinia"],
 "Nicea":["Byzantium","Natolia","Crete","Greece","Macedonia","Bulgaria","Syria","Cyprus","Walachia","Serbia","Palestine","Egypt"],
 "Lithuania":["Muscovy","Ukraine","Podolia","Prussia","Livonia","Poland","Finland","Crimea","Moldavia","Walachia","Bulgaria","Hungary","Transylvania"],
