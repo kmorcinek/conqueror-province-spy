@@ -18,7 +18,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
             set { SetField(ref this.selectedCapital, value, () => SelectedCapital); }
         }
 
-        public ObservableCollection<MyTemporaryObject> DatabaseObjects { get; set; }
+        public ObservableCollection<ProvinceViewModel> DatabaseObjects { get; set; }
 
         private int turn = 1;
         public int Turn
@@ -69,7 +69,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
 
         public MainWindowsViewModel()
         {
-            DatabaseObjects = new ObservableCollection<MyTemporaryObject>();
+            DatabaseObjects = new ObservableCollection<ProvinceViewModel>();
 
             Countries = new NeighbourProvider().GetCapitals();
             SelectedCapital = Countries.FirstOrDefault();
@@ -109,10 +109,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
                     };
                     provinceViewModel.ProvinceRemoved += provinceViewModel_OnProvinceRemoved;
 
-                    DatabaseObjects.Add(new MyTemporaryObject
-                    {
-                        ProvinceViewModel = provinceViewModel
-                    });
+                    DatabaseObjects.Add(provinceViewModel);
                 }
             }
         }
@@ -121,7 +118,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
         {
             for (int i = 0; i < DatabaseObjects.Count; i++)
             {
-                if (DatabaseObjects[i].ProvinceViewModel == removedProvince)
+                if (DatabaseObjects[i] == removedProvince)
                 {
                     DatabaseObjects.RemoveAt(i);
                 }
@@ -132,7 +129,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
         {
             Turn++;
 
-            foreach (var provinceViewModel in this.DatabaseObjects.Select(p => p.ProvinceViewModel))
+            foreach (var provinceViewModel in this.DatabaseObjects)
             {
                 var provinceHistory = provinceHistories.Single(p => p.ProvinceName == provinceViewModel.ProvinceName);
 
@@ -150,10 +147,5 @@ namespace ProvinceSpy.WpfGui.ViewModels
                 provinceViewModel.BuildPrediction.TurnsLeft = firstPrediction.TurnsLeft;
             }
         }
-    }
-
-    public class MyTemporaryObject
-    {
-        public ProvinceViewModel ProvinceViewModel { get; set; }
     }
 }

@@ -4,7 +4,7 @@
         xmlns:controls="clr-namespace:ProvinceSpy.WpfGui.Controls"
         xmlns:viewModels="clr-namespace:ProvinceSpy.WpfGui.ViewModels"
         x:Class="ProvinceSpy.WpfGui.MainWindow"
-        Title="ProvinceSpy" Height="578.833" Width="700">
+        Title="ProvinceSpy" Height="580" Width="720">
     <Window.Resources>
         <viewModels:MainWindowsViewModel x:Key="MainWindowsViewModel"/>
     </Window.Resources>
@@ -26,8 +26,8 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border Margin ="3"  BorderBrush="Blue" BorderThickness="2" CornerRadius="12">
-                        <controls:ProvinceUserControl DataContext="{Binding ProvinceViewModel}" />
+                    <Border Margin ="5"  BorderBrush="Blue" BorderThickness="4" CornerRadius="12">
+                        <controls:ProvinceUserControl DataContext="{Binding}" />
                     </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>

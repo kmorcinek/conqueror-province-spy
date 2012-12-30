@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
-using System.Linq;
+﻿using System.Windows;
 
 namespace ProvinceSpy.WpfGui
 {
