@@ -72,6 +72,7 @@
       <DependentUpon>ProvinceUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\SoldiersUserControl.cs" />
+    <Compile Include="EventBasedViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="TurnsNeededWindow.xaml.cs">

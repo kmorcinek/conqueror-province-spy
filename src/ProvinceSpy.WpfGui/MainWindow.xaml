@@ -19,7 +19,7 @@
             <Label Content="{Binding Season}" Width="55"></Label>
             <Label Content="{Binding Turn}" ContentStringFormat="{}(#{0})"></Label>
         </StackPanel>
-        <ListBox Margin="10,110,10,10" ItemsSource="{Binding DatabaseObjects}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListBox Margin="10,110,10,10" ItemsSource="{Binding Provinces}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>

@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace ProvinceSpy.WpfGui.ViewModels
 {
-    public class CultureViewModel : ViewModelBase
+    public class CultureViewModel : EventBasedViewModel
     {
         private CultureLevel cultureLevel = CultureLevel.Primitive;
         public CultureLevel CultureLevel

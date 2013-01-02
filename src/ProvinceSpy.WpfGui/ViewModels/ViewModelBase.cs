@@ -32,16 +32,5 @@ namespace ProvinceSpy.WpfGui.ViewModels
             OnPropertyChanged(selectorExpression);
             return true;
         }
-
-        public event Action ModelUpdated;
-        public void OnModelUpdated()
-        {
-            ModelUpdated();
-        }
-        public event Func<bool> WasUpdated;
-        public bool OnWasUpdated()
-        {
-            return WasUpdated();
-        }
     }
 }

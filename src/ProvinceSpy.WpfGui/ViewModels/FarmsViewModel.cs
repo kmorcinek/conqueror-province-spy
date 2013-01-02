@@ -2,7 +2,7 @@
 
 namespace ProvinceSpy.WpfGui.ViewModels
 {
-    public class FarmsViewModel : ViewModelBase
+    public class FarmsViewModel : EventBasedViewModel
     {
         private int farmsCount = 1;
         public int FarmsCount 
@@ -14,18 +14,24 @@ namespace ProvinceSpy.WpfGui.ViewModels
             }
         }
 
-        RelayCommand increaseCount;
-        public ICommand IncreaseCount
+        RelayCommand increaseCountCommand;
+        public ICommand IncreaseCountCommand
         {
             get
             {
-                if (increaseCount == null)
+                if (increaseCountCommand == null)
                 {
-                    increaseCount = new RelayCommand(param => this.FarmsCount++,
-                        param => true);
+                    increaseCountCommand = new RelayCommand(param => IncreaseCount(),
+                        param => OnWasUpdated() == false);
                 }
-                return increaseCount;
+                return increaseCountCommand;
             }
+        }
+
+        private void IncreaseCount()
+        {
+            this.FarmsCount++;
+            OnModelUpdated();
         }
     }
 }

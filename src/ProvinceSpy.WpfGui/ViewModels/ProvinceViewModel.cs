@@ -5,23 +5,35 @@ namespace ProvinceSpy.WpfGui.ViewModels
 {
     public class ProvinceViewModel : ViewModelBase
     {
-        public event Action<ProvinceViewModel> ProvinceRemoved = delegate {  };
+        public event Action<ProvinceViewModel> ProvinceRemoved = delegate { };
 
         // TODO not a INPC
+
         private bool isFirstTurn;
         public bool IsFirstTurn
         {
             get { return isFirstTurn; }
-            set { 
+            set
+            {
                 isFirstTurn = value;
                 WasChildrenChanged = false;
             }
         }
+
         private bool WasChildrenChanged { get; set; }
         public string ProvinceName { get; set; }
-        private FarmsViewModel farmsViewModel;
         public BuildPredictionViewModel BuildPrediction { get; set; }
-        public FarmsViewModel SoldiersViewModel { get; set; }
+
+        private FarmsViewModel soldiersViewModel;
+        public FarmsViewModel SoldiersViewModel
+        {
+            get { return soldiersViewModel; }
+            set
+            {
+                SetEvents(value);
+                SetField(ref soldiersViewModel, value, () => SoldiersViewModel);
+            }
+        }
 
         private CultureViewModel cultureViewModel;
         public CultureViewModel CultureViewModel
@@ -29,27 +41,30 @@ namespace ProvinceSpy.WpfGui.ViewModels
             get { return cultureViewModel; }
             set
             {
-                value.ModelUpdated += value_ModelUpdated;
-                value.WasUpdated += value_WasUpdated;
+                SetEvents(value);
                 SetField(ref cultureViewModel, value, () => CultureViewModel);
             }
         }
 
-        bool value_WasUpdated()
+        private FarmsViewModel farmsViewModel;
+        public FarmsViewModel FarmsViewModel
         {
-            return WasChildrenChanged;
-        }
-
-        void value_ModelUpdated()
-        {
-            if (IsFirstTurn == false)
-                WasChildrenChanged = true;
-        }
-
-        public FarmsViewModel FarmsViewModel 
-        { 
             get { return farmsViewModel; }
-            set { SetField(ref farmsViewModel, value, () => FarmsViewModel); }
+            set
+            {
+                SetEvents(value);
+                SetField(ref farmsViewModel, value, () => FarmsViewModel);
+            }
+        }
+
+        private void SetEvents(EventBasedViewModel value)
+        {
+            value.ModelUpdated += () =>
+                {
+                    if (IsFirstTurn == false)
+                        WasChildrenChanged = true;
+                };
+            value.WasUpdated += () => WasChildrenChanged;
         }
 
         RelayCommand removeProvinceCommand;

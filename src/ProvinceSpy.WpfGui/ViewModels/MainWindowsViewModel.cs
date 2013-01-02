@@ -18,7 +18,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
             set { SetField(ref this.selectedCapital, value, () => SelectedCapital); }
         }
 
-        public ObservableCollection<ProvinceViewModel> DatabaseObjects { get; set; }
+        public ObservableCollection<ProvinceViewModel> Provinces { get; set; }
 
         private int turn = 1;
         public int Turn
@@ -69,7 +69,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
 
         public MainWindowsViewModel()
         {
-            DatabaseObjects = new ObservableCollection<ProvinceViewModel>();
+            Provinces = new ObservableCollection<ProvinceViewModel>();
 
             Countries = new NeighbourProvider().GetCapitals();
             SelectedCapital = Countries.FirstOrDefault();
@@ -81,7 +81,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
         {
             Turn = 1;
 
-            DatabaseObjects.Clear();
+            Provinces.Clear();
 
             provinceHistories.Clear();
 
@@ -110,18 +110,18 @@ namespace ProvinceSpy.WpfGui.ViewModels
                     provinceViewModel.ProvinceRemoved += provinceViewModel_OnProvinceRemoved;
                     provinceViewModel.IsFirstTurn = true;
 
-                    DatabaseObjects.Add(provinceViewModel);
+                    Provinces.Add(provinceViewModel);
                 }
             }
         }
 
         private void provinceViewModel_OnProvinceRemoved(ProvinceViewModel removedProvince)
         {
-            for (int i = 0; i < DatabaseObjects.Count; i++)
+            for (int i = 0; i < Provinces.Count; i++)
             {
-                if (DatabaseObjects[i] == removedProvince)
+                if (Provinces[i] == removedProvince)
                 {
-                    DatabaseObjects.RemoveAt(i);
+                    Provinces.RemoveAt(i);
                 }
             }
         }
@@ -130,7 +130,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
         {
             Turn++;
 
-            foreach (var provinceViewModel in this.DatabaseObjects)
+            foreach (var provinceViewModel in this.Provinces)
             {
                 provinceViewModel.IsFirstTurn = false;
                 var provinceHistory = provinceHistories.Single(p => p.ProvinceName == provinceViewModel.ProvinceName);
