@@ -98,8 +98,8 @@ namespace ProvinceSpy.WpfGui.ViewModels
                     var provinceViewModel = new ProvinceViewModel
                     {
                         ProvinceName = neighbour,
-                        FarmsViewModel = new FarmsViewModel { FarmsCount = 1 },
-                        SoldiersViewModel = new FarmsViewModel { FarmsCount = 1 },
+                        FarmsViewModel = new NumericViewModel { Count = 1 },
+                        SoldiersViewModel = new NumericViewModel { Count = 1 },
                         CultureViewModel = new CultureViewModel(),
                         BuildPrediction = new BuildPredictionViewModel
                         {
@@ -137,9 +137,9 @@ namespace ProvinceSpy.WpfGui.ViewModels
 
                 provinceHistory.Add(
                     new ProvinceRevision(
-                        provinceViewModel.FarmsViewModel.FarmsCount,
+                        provinceViewModel.FarmsViewModel.Count,
                         0,
-                        provinceViewModel.SoldiersViewModel.FarmsCount,
+                        provinceViewModel.SoldiersViewModel.Count,
                         provinceViewModel.CultureViewModel.CultureLevel));
 
                 var predictor = new Predictor();

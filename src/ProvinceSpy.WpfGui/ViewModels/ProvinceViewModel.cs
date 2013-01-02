@@ -24,8 +24,8 @@ namespace ProvinceSpy.WpfGui.ViewModels
         public string ProvinceName { get; set; }
         public BuildPredictionViewModel BuildPrediction { get; set; }
 
-        private FarmsViewModel soldiersViewModel;
-        public FarmsViewModel SoldiersViewModel
+        private NumericViewModel soldiersViewModel;
+        public NumericViewModel SoldiersViewModel
         {
             get { return soldiersViewModel; }
             set
@@ -46,8 +46,8 @@ namespace ProvinceSpy.WpfGui.ViewModels
             }
         }
 
-        private FarmsViewModel farmsViewModel;
-        public FarmsViewModel FarmsViewModel
+        private NumericViewModel farmsViewModel;
+        public NumericViewModel FarmsViewModel
         {
             get { return farmsViewModel; }
             set

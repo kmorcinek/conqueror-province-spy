@@ -2,14 +2,14 @@
 
 namespace ProvinceSpy.WpfGui.Controls
 {
-    public partial class FarmsUserControl : UserControl
+    public partial class NumericUserControl : UserControl
     {
-        public FarmsUserControl()
+        public NumericUserControl()
         {
             InitializeComponent();
         }
 
-        protected FarmsUserControl(string label)
+        protected NumericUserControl(string label)
             :this()
         {
             lbl.Content = label;

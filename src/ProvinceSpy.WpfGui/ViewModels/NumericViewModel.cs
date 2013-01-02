@@ -2,15 +2,15 @@
 
 namespace ProvinceSpy.WpfGui.ViewModels
 {
-    public class FarmsViewModel : EventBasedViewModel
+    public class NumericViewModel : EventBasedViewModel
     {
-        private int farmsCount = 1;
-        public int FarmsCount 
+        private int count = 1;
+        public int Count 
         { 
-            get { return this.farmsCount; }
+            get { return this.count; }
             set
             {
-                SetField(ref this.farmsCount, value, () => this.FarmsCount);
+                SetField(ref this.count, value, () => this.Count);
             }
         }
 
@@ -30,7 +30,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
 
         private void IncreaseCount()
         {
-            this.FarmsCount++;
+            this.Count++;
             OnModelUpdated();
         }
     }
