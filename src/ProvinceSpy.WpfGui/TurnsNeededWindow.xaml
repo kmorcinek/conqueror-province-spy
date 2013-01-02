@@ -1,0 +1,13 @@
+﻿<Window x:Class="ProvinceSpy.WpfGui.TurnsNeededWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TurnsNeededWindow" Height="300" Width="300">
+    <Grid>
+        <Slider HorizontalAlignment="Left" Margin="34,37,0,0" VerticalAlignment="Top" Width="142" Minimum="1" Maximum="6" SmallChange="1" Value="1" AutoToolTipPlacement="TopLeft"/>
+        <GroupBox Header="GroupBox" HorizontalAlignment="Left" Margin="187,37,0,0" VerticalAlignment="Top" Height="120" Width="97">
+            <StackPanel x:Name="stack">
+
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

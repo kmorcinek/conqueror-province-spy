@@ -8,5 +8,11 @@ namespace ProvinceSpy.WpfGui
         {
             InitializeComponent();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var window = new TurnsNeededWindow();
+            window.Show();
+        }
     }
 }
