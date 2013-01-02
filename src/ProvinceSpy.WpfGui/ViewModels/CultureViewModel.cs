@@ -1,10 +1,11 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows.Input;
 
 namespace ProvinceSpy.WpfGui.ViewModels
 {
     public class CultureViewModel : ViewModelBase
     {
-        private CultureLevel cultureLevel = ProvinceSpy.CultureLevel.Primitive;
+        private CultureLevel cultureLevel = CultureLevel.Primitive;
         public CultureLevel CultureLevel
         {
             get { return this.cultureLevel; }
@@ -22,7 +23,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
                 if (upgradeCultureCommand == null)
                 {
                     upgradeCultureCommand = new RelayCommand(param => this.UpgradeCulture(),
-                        param => CultureLevel != CultureLevel.Advanced);
+                        param => OnWasUpdated() == false && CultureLevel != CultureLevel.Advanced);
                 }
                 return upgradeCultureCommand;
             }
@@ -30,9 +31,10 @@ namespace ProvinceSpy.WpfGui.ViewModels
 
         private void UpgradeCulture()
         {
-            var intValue = (int) CultureLevel;
+            var intValue = (int)CultureLevel;
             intValue++;
-            CultureLevel = (CultureLevel) intValue;
+            OnModelUpdated();
+            CultureLevel = (CultureLevel)intValue;
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace ProvinceSpy.WpfGui.ViewModels
 {
-    public class ViewModelBase : INotifyPropertyChanged
+    public abstract class ViewModelBase : INotifyPropertyChanged
     {
         // boiler-plate
         public event PropertyChangedEventHandler PropertyChanged;
@@ -31,6 +31,17 @@ namespace ProvinceSpy.WpfGui.ViewModels
             field = value;
             OnPropertyChanged(selectorExpression);
             return true;
+        }
+
+        public event Action ModelUpdated;
+        public void OnModelUpdated()
+        {
+            ModelUpdated();
+        }
+        public event Func<bool> WasUpdated;
+        public bool OnWasUpdated()
+        {
+            return WasUpdated();
         }
     }
 }

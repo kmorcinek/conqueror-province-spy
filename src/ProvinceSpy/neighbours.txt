@@ -5,4 +5,5 @@
 "Nicea":["Byzantium","Natolia","Crete","Greece","Macedonia","Bulgaria","Syria","Cyprus","Walachia","Serbia","Palestine","Egypt"],
 "Lithuania":["Muscovy","Ukraine","Podolia","Prussia","Livonia","Poland","Finland","Crimea","Moldavia","Walachia","Bulgaria","Hungary","Transylvania"],
 "Saxony":["Holland","Hanover","Brandenburg","Bohemia","Rhineland","Luxembourg","Flanders","Denmark","Hungary","Austria","Helvetica","Burgundy","Genoa","Venetia"],
+"one Neighbour":["neighbour"],
 }

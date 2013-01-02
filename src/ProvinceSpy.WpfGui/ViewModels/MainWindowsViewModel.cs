@@ -108,6 +108,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
                         },
                     };
                     provinceViewModel.ProvinceRemoved += provinceViewModel_OnProvinceRemoved;
+                    provinceViewModel.IsFirstTurn = true;
 
                     DatabaseObjects.Add(provinceViewModel);
                 }
@@ -131,6 +132,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
 
             foreach (var provinceViewModel in this.DatabaseObjects)
             {
+                provinceViewModel.IsFirstTurn = false;
                 var provinceHistory = provinceHistories.Single(p => p.ProvinceName == provinceViewModel.ProvinceName);
 
                 provinceHistory.Add(
