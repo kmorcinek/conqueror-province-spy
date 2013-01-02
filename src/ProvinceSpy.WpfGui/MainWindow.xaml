@@ -13,6 +13,7 @@
     		ItemsSource="{Binding Countries}" SelectedItem="{Binding SelectedCapital}" />
         <Button Content="Change capital" HorizontalAlignment="Left" Margin="223,38,0,0" VerticalAlignment="Top" Width="100" Command="{Binding ChangeCapitalCommand}"/>
         <Button Content="Next turn" HorizontalAlignment="Left" Margin="359,38,0,0" VerticalAlignment="Top" Width="75" Command="{Binding NextTurnCommand}"/>
+        <Button Content="Ccc" HorizontalAlignment="Left" Margin="459,38,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" />
         <StackPanel Orientation="Horizontal" Margin="0,15,35,0" HorizontalAlignment="Right">
             <Label Content="Turn:"/>
             <Label Content="{Binding Season}" Width="55"></Label>

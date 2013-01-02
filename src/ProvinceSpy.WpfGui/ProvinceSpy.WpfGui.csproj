@@ -68,11 +68,15 @@
     <Compile Include="Controls\SoldiersUserControl.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RelayCommand.cs" />
+    <Compile Include="TurnsNeededWindow.xaml.cs">
+      <DependentUpon>TurnsNeededWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\BuildPredictionViewModel.cs" />
     <Compile Include="ViewModels\CultureViewModel.cs" />
     <Compile Include="ViewModels\FarmsViewModel.cs" />
     <Compile Include="ViewModels\MainWindowsViewModel.cs" />
     <Compile Include="ViewModels\ProvinceViewModel.cs" />
+    <Compile Include="ViewModels\TurnsNeededViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="Controls\BuildPredictionUserControl.xaml">
       <SubType>Designer</SubType>
@@ -102,6 +106,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TurnsNeededWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
