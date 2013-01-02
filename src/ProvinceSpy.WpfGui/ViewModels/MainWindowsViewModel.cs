@@ -136,6 +136,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
                 provinceHistory.Add(
                     new ProvinceRevision(
                         provinceViewModel.FarmsViewModel.FarmsCount,
+                        0,
                         provinceViewModel.SoldiersViewModel.FarmsCount,
                         provinceViewModel.CultureViewModel.CultureLevel));
 

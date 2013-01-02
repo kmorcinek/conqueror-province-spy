@@ -65,7 +65,7 @@ namespace ProvinceSpy.WpfGui
 
         public int CalculateIt(Buildings building)
         {
-            var revision = ProvinceRevisionFactory.FromFarmsAndCulture((int)farmsSlider.Value + GetResources(), CultureLevel.Primitive);
+            var revision = ProvinceRevisionFactory.FromFarmsResourcesAndCulture((int)farmsSlider.Value, GetResources(), CultureLevel.Primitive);
             var calculator = AutofacServiceLocator.Container.Resolve<INeededTurnsCalculator>();
 
             return calculator.Calculate(revision, building);
