@@ -72,7 +72,11 @@
     <Compile Include="Controls\ProvinceUserControl.xaml.cs">
       <DependentUpon>ProvinceUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ResourceUserControl.xaml.cs">
+      <DependentUpon>ResourceUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SoldiersUserControl.cs" />
+    <Compile Include="EnumToBooleanConverter.cs" />
     <Compile Include="ViewModels\EventBasedViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RelayCommand.cs" />
@@ -84,6 +88,7 @@
     <Compile Include="ViewModels\NumericViewModel.cs" />
     <Compile Include="ViewModels\MainWindowsViewModel.cs" />
     <Compile Include="ViewModels\ProvinceViewModel.cs" />
+    <Compile Include="ViewModels\ResourceViewModel.cs" />
     <Compile Include="ViewModels\TurnsNeededViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="Controls\BuildPredictionUserControl.xaml">
@@ -99,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\ProvinceUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ResourceUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

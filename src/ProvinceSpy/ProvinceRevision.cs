@@ -8,13 +8,11 @@ namespace ProvinceSpy
         private readonly int farmsCount;
         private readonly CultureLevel cultureLevel;
         private readonly int soldiersCount;
-        private readonly int resourcesCount;
+        private readonly Resource resourceLevel;
 
-        public ProvinceRevision(int farmsCount, int resourcesCount, int soldiersCount, CultureLevel cultureLevel)
+        public ProvinceRevision(int farmsCount, Resource resourceLevel, int soldiersCount, CultureLevel cultureLevel)
         {
-            Contract.Requires<ArgumentOutOfRangeException>(0 <= resourcesCount && resourcesCount <= 2);
-
-            this.resourcesCount = resourcesCount;
+            this.resourceLevel = resourceLevel;
             this.soldiersCount = soldiersCount;
             this.cultureLevel = cultureLevel;
             this.farmsCount = farmsCount;
@@ -35,9 +33,9 @@ namespace ProvinceSpy
             get { return soldiersCount; }
         }
 
-        public int ResourcesCount
+        public Resource ResourceLevel
         {
-            get { return resourcesCount; }
+            get { return resourceLevel; }
         }
     }
 }

@@ -101,6 +101,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
                         FarmsViewModel = new NumericViewModel { Count = 1 },
                         SoldiersViewModel = new NumericViewModel { Count = 1 },
                         CultureViewModel = new CultureViewModel(),
+                        ResourceViewModel = new ResourceViewModel(),
                         BuildPrediction = new BuildPredictionViewModel
                         {
                             Building = firstPrediction.Building,
@@ -138,7 +139,7 @@ namespace ProvinceSpy.WpfGui.ViewModels
                 provinceHistory.Add(
                     new ProvinceRevision(
                         provinceViewModel.FarmsViewModel.Count,
-                        0,
+                        provinceViewModel.ResourceViewModel.ResourceLevel,
                         provinceViewModel.SoldiersViewModel.Count,
                         provinceViewModel.CultureViewModel.CultureLevel));
 

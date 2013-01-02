@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="ProvinceSpy.WpfGui.Controls.ResourceUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ProvinceSpy.WpfGui"
+             xmlns:provinceSpy="clr-namespace:ProvinceSpy;assembly=ProvinceSpy"
+             mc:Ignorable="d" 
+             d:DesignHeight="36" d:DesignWidth="160">
+    <Grid>
+        <StackPanel IsEnabled="{Binding IsEnableds}">
+            <StackPanel.Resources>
+                <local:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+            </StackPanel.Resources>
+            <RadioButton Content="{x:Static provinceSpy:Resource.Zero}" IsChecked="{Binding ResourceLevel, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static provinceSpy:Resource.Zero}}" />
+            <RadioButton Content="{x:Static provinceSpy:Resource.ResourcesPlus1}" IsChecked="{Binding ResourceLevel, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static provinceSpy:Resource.ResourcesPlus1}}" />
+            <RadioButton Content="{x:Static provinceSpy:Resource.ResourcesPlus2}" IsChecked="{Binding ResourceLevel, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static provinceSpy:Resource.ResourcesPlus2}}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -23,6 +23,17 @@ namespace ProvinceSpy.WpfGui.ViewModels
         private bool WasChildrenChanged { get; set; }
         public string ProvinceName { get; set; }
         public BuildPredictionViewModel BuildPrediction { get; set; }
+        
+        private ResourceViewModel resourceViewModel;
+        public ResourceViewModel ResourceViewModel
+        {
+            get { return resourceViewModel; }
+            set
+            {
+                SetEvents(value);
+                SetField(ref resourceViewModel, value, () => ResourceViewModel);
+            }
+        }
 
         private NumericViewModel soldiersViewModel;
         public NumericViewModel SoldiersViewModel

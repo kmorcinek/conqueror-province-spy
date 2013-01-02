@@ -4,7 +4,7 @@
     {
         public int Calculate(ProvinceRevision revision)
         {
-            return (revision.FarmsCount + revision.ResourcesCount)*(int) revision.CultureLevel;
+            return (revision.FarmsCount + (int)revision.ResourceLevel)*(int) revision.CultureLevel;
         }
     }
 }

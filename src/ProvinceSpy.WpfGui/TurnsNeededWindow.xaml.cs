@@ -71,13 +71,13 @@ namespace ProvinceSpy.WpfGui
             return calculator.Calculate(revision, building);
         }
 
-        private int GetResources()
+        private Resource GetResources()
         {
             foreach (var resourceButton in resources)
             {
                 if (resourceButton.IsChecked.HasValue && resourceButton.IsChecked.Value)
                 {
-                    return (int)resourceButton.Tag;
+                    return (Resource)(int)resourceButton.Tag;
                 }
             }
 

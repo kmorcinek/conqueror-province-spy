@@ -101,6 +101,7 @@
     <Compile Include="ProvinceHistory.cs" />
     <Compile Include="ProvinceRevision.cs" />
     <Compile Include="ProvinceRevisionFactory.cs" />
+    <Compile Include="Resource.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="BuildingRules.txt" />

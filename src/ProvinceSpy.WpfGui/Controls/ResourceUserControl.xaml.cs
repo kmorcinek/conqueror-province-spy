@@ -2,9 +2,9 @@
 
 namespace ProvinceSpy.WpfGui.Controls
 {
-    public partial class CultureUserControl : UserControl
+    public partial class ResourceUserControl : UserControl
     {
-        public CultureUserControl()
+        public ResourceUserControl()
         {
             InitializeComponent();
         }

@@ -1,7 +1,6 @@
 ﻿using System;
-using ProvinceSpy.WpfGui.ViewModels;
 
-namespace ProvinceSpy.WpfGui
+namespace ProvinceSpy.WpfGui.ViewModels
 {
     public class EventBasedViewModel : ViewModelBase
     {
