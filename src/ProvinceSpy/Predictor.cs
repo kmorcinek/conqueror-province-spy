@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics.Contracts;
+using Autofac;
 
 namespace ProvinceSpy
 {
@@ -20,7 +21,8 @@ namespace ProvinceSpy
                 prediction = new BuildPrediction();
                 prediction.Building = lastBuilding.Value;
 
-                var calculator = new NeededTurnsCalculator();
+                var calculator = AutofacServiceLocator.Container.Resolve<INeededTurnsCalculator>();
+
                 int neededTurns = calculator.Calculate(LastRevision(provinceHistory.Revisions), lastBuilding.Value);
 
                 int? turnsFromLastBuilt = GetTurnsFromLastBuilt(provinceHistory.Revisions);

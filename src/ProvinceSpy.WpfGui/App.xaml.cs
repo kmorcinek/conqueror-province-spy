@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Windows;
+﻿using System.Windows;
+using Autofac;
 
 namespace ProvinceSpy.WpfGui
 {
@@ -12,5 +8,12 @@ namespace ProvinceSpy.WpfGui
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            var builder = new ContainerBuilder();
+            builder.Register(c => new NeededTurnsCalculator()).As<INeededTurnsCalculator>().SingleInstance();
+
+            AutofacServiceLocator.Container = builder.Build();
+        }
     }
 }

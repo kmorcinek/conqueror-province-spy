@@ -1,6 +1,6 @@
 ﻿namespace ProvinceSpy
 {
-    public class NeededTurnsCalculator
+    public class NeededTurnsCalculator : INeededTurnsCalculator
     {
         private readonly IProductionCost productionCost;
         private readonly IProductionCapacity productionCapacity;
@@ -8,7 +8,6 @@
         public NeededTurnsCalculator()
             : this(new ProductionCapacity(), new ProductionCost())
         {
-
         }
 
         public NeededTurnsCalculator(IProductionCapacity productionCapacity, IProductionCost productionCost)

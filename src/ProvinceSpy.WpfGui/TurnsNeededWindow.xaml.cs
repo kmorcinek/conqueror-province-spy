@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ProvinceSpy.WpfGui
@@ -25,14 +26,14 @@ namespace ProvinceSpy.WpfGui
             }
         }
 
-        void button_Checked(object sender, RoutedEventArgs e)
+        private void button_Checked(object sender, RoutedEventArgs e)
         {
             UpdateCalculations();
         }
 
         private void UpdateCalculations()
         {
-            ProvinceRevision revision = new ProvinceRevision(1, 0, 0);
-
+            throw new NotImplementedException();
         }
+    }
 }
