@@ -7,20 +7,6 @@ namespace ProvinceSpy
 {
     public class Predictor
     {
-        private IProductionCost productionCost;
-        private IProductionCapacity productionCapacity;
-
-        public Predictor()
-            : this(new ProductionCapacity(), new ProductionCost())
-        {
-        }
-
-        public Predictor(IProductionCapacity productionCapacity, IProductionCost productionCost)
-        {
-            this.productionCapacity = productionCapacity;
-            this.productionCost = productionCost;
-        }
-
         [Pure]
         public IEnumerable<BuildPrediction> Predict(ProvinceHistory provinceHistory)
         {
@@ -33,10 +19,12 @@ namespace ProvinceSpy
             {
                 prediction = new BuildPrediction();
                 prediction.Building = lastBuilding.Value;
-                int capacity = productionCapacity.Calculate(LastRevision(provinceHistory.Revisions));
-                int cost = productionCost.Calculate(LastRevision(provinceHistory.Revisions), lastBuilding.Value);
+
+                var calculator = new NeededTurnsCalculator();
+                int neededTurns = calculator.Calculate(LastRevision(provinceHistory.Revisions), lastBuilding.Value);
+
                 int? turnsFromLastBuilt = GetTurnsFromLastBuilt(provinceHistory.Revisions);
-                prediction.TurnsLeft = cost / capacity - turnsFromLastBuilt.Value;
+                prediction.TurnsLeft = neededTurns - turnsFromLastBuilt.Value;
             }
             else
             {
