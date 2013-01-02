@@ -1,4 +1,4 @@
-﻿namespace ProvinceSpy.Tests
+namespace ProvinceSpy
 {
     public class ProvinceRevisionFactory
     {
