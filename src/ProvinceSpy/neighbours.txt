@@ -1,9 +1,12 @@
 {
 "Ulster":["Wales","Eire","Scotland","Northumberland","England","Norway","Flanders","Brittany","Normandy"],
 "Grenada":["Portugal","Leon","Castile","Aragon","Gascony","Aquitaine","Iledefrance","Marocco","Tangiers","Algiers"],
-"Roma":["Genoa","Venetia","Napoli","Corsica","Provence","Burgundy","Helvetica","Austria","Dalmatia","Sicilia","Sardinia"],
+"Roma":["Provence","Burgundy","Helvetica","Austria","Dalmatia","Sicilia","Sardinia"],
+"Corsica":["Venetia","Burgundy","Helvetica","Austria","Dalmatia","Sicilia","Tunis","Napoli"],
 "Nicea":["Byzantium","Natolia","Crete","Greece","Macedonia","Bulgaria","Syria","Cyprus","Walachia","Serbia","Palestine","Egypt"],
-"Lithuania":["Muscovy","Ukraine","Podolia","Prussia","Livonia","Poland","Finland","Crimea","Moldavia","Walachia","Bulgaria","Hungary","Transylvania"],
-"Saxony":["Holland","Hanover","Brandenburg","Bohemia","Rhineland","Luxembourg","Flanders","Denmark","Hungary","Austria","Helvetica","Burgundy","Genoa","Venetia"],
+"Lithuania":["Poland","Finland","Crimea","Moldavia","Walachia","Bulgaria","Hungary","Transylvania"],
+"Muscovy":["Podolia","Prussia","Livonia","Poland","Norway","Sweden","Crimea","Moldavia","Walachia","Bulgaria","Hungary","Transylvania"],
+"Saxony":["Denmark","Hungary","Austria","Helvetica","Burgundy","Genoa","Venetia"],
+"Hanover":["Bohemia","Rhineland","Luxembourg","Hungary","Austria","Helvetica","Burgundy","Venetia","Sweden"],
 "one Neighbour":["neighbour"],
 }
