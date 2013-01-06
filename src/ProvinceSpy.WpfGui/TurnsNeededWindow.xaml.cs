@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using Autofac;
@@ -11,6 +10,7 @@ namespace ProvinceSpy.WpfGui
         private readonly Dictionary<Buildings, string> keyValues = new Dictionary<Buildings, string>
             {
                 { Buildings.Farm, Buildings.Farm.ToString() },
+                { Buildings.Fortification, Buildings.Fortification.ToString() },
                 { Buildings.Culture, Buildings.Culture.ToString() },
             };
 
