@@ -18,15 +18,19 @@ namespace ProvinceSpy
             BuildPrediction prediction;
             if (lastBuilding.HasValue)
             {
-                prediction = new BuildPrediction();
-                prediction.Building = lastBuilding.Value;
-
                 var calculator = AutofacServiceLocator.Container.Resolve<INeededTurnsCalculator>();
 
-                int neededTurns = calculator.Calculate(LastRevision(provinceHistory.Revisions), lastBuilding.Value);
+                var nextBuilding = GetNextBuilding(LastRevision(provinceHistory.Revisions), lastBuilding.Value);
+
+                int neededTurns = calculator.Calculate(LastRevision(provinceHistory.Revisions), nextBuilding);
 
                 int? turnsFromLastBuilt = GetTurnsFromLastBuilt(provinceHistory.Revisions);
-                prediction.TurnsLeft = neededTurns - turnsFromLastBuilt.Value;
+
+                prediction = new BuildPrediction
+                    {
+                        Building = nextBuilding,
+                        TurnsLeft = neededTurns - turnsFromLastBuilt.Value
+                    };
             }
             else
             {
@@ -37,6 +41,27 @@ namespace ProvinceSpy
                 {
                     prediction,
                 };
+        }
+
+        internal Buildings GetNextBuilding(ProvinceRevision lastRevision, Buildings lastBuilt)
+        {
+            if (lastBuilt == Buildings.Soldiers)
+            {
+                if (lastRevision.FarmsCount == 1
+                        && lastRevision.SoldiersCount == 2)
+                {
+                    return Buildings.Soldiers;
+                }
+
+                if (lastRevision.SoldiersCount < lastRevision.FarmsCount * 2)
+                {
+                    return Buildings.Soldiers;
+                }
+
+                return Buildings.Farm;
+            }
+
+            return lastBuilt;
         }
 
         [Pure]

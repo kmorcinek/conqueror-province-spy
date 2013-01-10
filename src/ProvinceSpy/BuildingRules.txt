@@ -1,1 +1,3 @@
 ﻿Province working on soldiers, keep building soldiers up to 2*farmsCount.
+1 Farm would build up to 3 soldier.
+x Farms would build up to 2 * Farms soldiers.
