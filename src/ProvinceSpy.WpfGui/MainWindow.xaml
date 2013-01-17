@@ -4,7 +4,7 @@
         xmlns:controls="clr-namespace:ProvinceSpy.WpfGui.Controls"
         xmlns:viewModels="clr-namespace:ProvinceSpy.WpfGui.ViewModels"
         x:Class="ProvinceSpy.WpfGui.MainWindow"
-        Title="ProvinceSpy" Height="580" Width="720">
+        Title="ProvinceSpy" Height="580" Width="720" Icon="Icon.ico">
     <Window.Resources>
         <viewModels:MainWindowsViewModel x:Key="MainWindowsViewModel"/>
     </Window.Resources>
