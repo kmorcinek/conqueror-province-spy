@@ -11,6 +11,10 @@ namespace ProvinceSpy.WpfGui
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            var exampleBuilingsTakingTurns = new ExampleBuilingsTakingTurns();
+            exampleBuilingsTakingTurns.AddThem();
+            exampleBuilingsTakingTurns.SaveToFile(); 
+            
             var window = new TurnsNeededWindow();
             window.Show();
         }

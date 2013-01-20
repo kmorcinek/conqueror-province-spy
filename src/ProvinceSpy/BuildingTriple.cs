@@ -36,5 +36,12 @@
                 return hashCode;
             }
         }
+
+        public BuildingTriple(BuildingStruct buildingStruct)
+        {
+            Power = buildingStruct.Power;
+            Culture = buildingStruct.Culture;
+            Building = buildingStruct.Building;
+        }
     }
 }

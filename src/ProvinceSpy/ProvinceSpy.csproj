@@ -87,6 +87,7 @@
     <Compile Include="BuildingStruct.cs" />
     <Compile Include="BuildingTriple.cs" />
     <Compile Include="BuildPrediction.cs" />
+    <Compile Include="Common.cs" />
     <Compile Include="CultureLevel.cs" />
     <Compile Include="ExampleBuilingsTakingTurns.cs" />
     <Compile Include="INeededTurnsCalculator.cs" />

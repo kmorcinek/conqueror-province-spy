@@ -16,14 +16,6 @@ namespace ProvinceSpy.Tests
         }
 
         [Test]
-        public void T()
-        {
-            var exampleBuilingsTakingTurns = new ExampleBuilingsTakingTurns();
-            exampleBuilingsTakingTurns.AddThem();
-            exampleBuilingsTakingTurns.SaveToFile();
-        }
-
-        [Test]
         public void Calculate_Soldier_Costs5()
         {
             productionCost.Calculate(null, Buildings.Soldiers).Should().Be(5);
