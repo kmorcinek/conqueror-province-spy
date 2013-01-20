@@ -1,9 +1,12 @@
-﻿namespace ProvinceSpy
+﻿using System.Collections.Generic;
+
+namespace ProvinceSpy
 {
     public class NeededTurnsCalculator : INeededTurnsCalculator
     {
         private readonly IProductionCost productionCost;
         private readonly IProductionCapacity productionCapacity;
+        private Dictionary<BuildingStruct, int> turns = new Dictionary<BuildingStruct, int>();
 
         public NeededTurnsCalculator()
             : this(new ProductionCapacity(), new ProductionCost())
@@ -18,6 +21,13 @@
 
         public int Calculate(ProvinceRevision revision, Buildings building)
         {
+//            var triple = new BuildingStruct(revision.Power, revision.CultureLevel, building);
+//            int turnsNeeded;
+//            if (turns.TryGetValue(triple, out turnsNeeded))
+//            {
+//                return turnsNeeded;
+//            }
+
             if (revision.FarmsCount == 3 && revision.CultureLevel == CultureLevel.Primitive)
             {
                 if (building == Buildings.Culture)

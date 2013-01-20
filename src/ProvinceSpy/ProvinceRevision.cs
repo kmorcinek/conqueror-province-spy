@@ -37,5 +37,10 @@ namespace ProvinceSpy
         {
             get { return resourceLevel; }
         }
+
+        public int Power
+        {
+            get { return FarmsCount + (int) ResourceLevel; }
+        }
     }
 }

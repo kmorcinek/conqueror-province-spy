@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 using FluentAssertions;
 
 namespace ProvinceSpy.Tests
@@ -12,6 +13,14 @@ namespace ProvinceSpy.Tests
         public void SetUp()
         {
             productionCost = new ProductionCost();
+        }
+
+        [Test]
+        public void T()
+        {
+            var exampleBuilingsTakingTurns = new ExampleBuilingsTakingTurns();
+            exampleBuilingsTakingTurns.AddThem();
+            exampleBuilingsTakingTurns.SaveToFile();
         }
 
         [Test]

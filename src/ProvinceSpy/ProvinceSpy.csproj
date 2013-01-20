@@ -84,8 +84,11 @@
   <ItemGroup>
     <Compile Include="AutofacServiceLocator.cs" />
     <Compile Include="Buildings.cs" />
+    <Compile Include="BuildingStruct.cs" />
+    <Compile Include="BuildingTriple.cs" />
     <Compile Include="BuildPrediction.cs" />
     <Compile Include="CultureLevel.cs" />
+    <Compile Include="ExampleBuilingsTakingTurns.cs" />
     <Compile Include="INeededTurnsCalculator.cs" />
     <Compile Include="IProductionCapacity.cs" />
     <Compile Include="IProductionCost.cs" />
