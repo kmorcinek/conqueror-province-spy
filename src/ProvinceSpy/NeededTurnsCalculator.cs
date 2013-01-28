@@ -7,7 +7,7 @@ namespace ProvinceSpy
     {
         private readonly IProductionCost productionCost;
         private readonly IProductionCapacity productionCapacity;
-        private Dictionary<BuildingTriple, int> turns = new Dictionary<BuildingTriple, int>();
+        private readonly Dictionary<BuildingTriple, int> turns = new Dictionary<BuildingTriple, int>();
 
         public NeededTurnsCalculator()
             : this(new ProductionCapacity(), new ProductionCost())
@@ -42,20 +42,9 @@ namespace ProvinceSpy
                 return turnsNeeded;
             }
 
-//            if (revision.FarmsCount == 3 && revision.CultureLevel == CultureLevel.Primitive)
-//            {
-//                if (building == Buildings.Culture)
-//                {
-//                    return 10;
-//                }
-//                if (building == Buildings.Fortification)
-//                {
-//                    return 6;
-//                }
-//            }
-
             return 99;
 
+            // TODO productionCapacity && productionCost should be removed.
             int capacity = productionCapacity.Calculate(revision);
             int cost = productionCost.Calculate(revision, building);
 

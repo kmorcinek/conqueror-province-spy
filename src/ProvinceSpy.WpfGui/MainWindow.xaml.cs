@@ -13,8 +13,8 @@ namespace ProvinceSpy.WpfGui
         {
             var exampleBuilingsTakingTurns = new ExampleBuilingsTakingTurns();
             exampleBuilingsTakingTurns.AddThem();
-            exampleBuilingsTakingTurns.SaveToFile(); 
-            
+            exampleBuilingsTakingTurns.SaveToFile();
+
             var window = new TurnsNeededWindow();
             window.Show();
         }
